@@ -1,11 +1,30 @@
 from flask import Flask, render_template, request
-#from src.search_articles import search_articles
+from src.search_articles import search_articles
 
 app = Flask(__name__, template_folder="docs")
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
-    return render_template("index.html")
+    articles = []
+
+    if request.method == "POST":
+        keyword = request.form.get("keyword", "")
+        topic = request.form.get("topic", "")
+        start_year = request.form.get("start_year", "")
+        end_year = request.form.get("end_year", "")
+        open_access = request.form.get("open_access", "")
+        sort_by = request.form.get("sort_by", "")
+
+        articles = search_articles(
+            keyword=keyword,
+            topic=topic,
+            start_year=start_year,
+            end_year=end_year,
+            open_access=open_access,
+            sort_by=sort_by
+        )
+
+    return render_template("index.html", articles=articles)
 
 @app.route("/algorithm")
 def algorithm():
