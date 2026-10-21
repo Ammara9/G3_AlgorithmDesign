@@ -37,8 +37,10 @@ def search_articles(keyword="", topic="", start_year="", end_year="",
                 continue
 
         # Filter 1: Topic
-        if topic and topic_text != topic.lower():
-            continue
+        if topic and topic_text.strip() != topic.strip().lower():
+          continue
+        # if topic and topic_text != topic.lower():
+        #     continue
 
         # Filter 2: Start year
         if start_year and year < int(start_year):
