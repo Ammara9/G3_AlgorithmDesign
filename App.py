@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request
 #from src.search_articles import search_articles
 
-app = Flask(__name__)
-
+app = Flask(__name__, template_folder="docs")
 
 @app.route("/")
 def index():
