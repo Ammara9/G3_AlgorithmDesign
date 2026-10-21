@@ -1,18 +1,14 @@
-    <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        <nav>
-    <a href="{{ url_for('index') }}">Home</a>
-    <a href="{{ url_for('algorithm') }}">Algorithm</a>
-    <a href="{{ url_for('dataset') }}">Dataset</a>
-    <a href="{{ url_for('people') }}">People</a>
-</nav>
-    </div>
-</body>
-</html>
+{# Navigation bar: shared by every page with {% include 'navigation_bar.html' %}.
+   The link of the page you are on gets aria-current="page" automatically,
+   which makes it teal (see "Navigation bar" in static/css/style.css). #}
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="{{ url_for('index') }}"><img class="icon" src="{{ url_for('static', filename='img/icons/academic-cap.svg') }}" alt=""> G3 Algorithm Design</a>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('index') }}" {% if request.endpoint == 'index' %}aria-current="page"{% endif %}><img class="icon" src="{{ url_for('static', filename='img/icons/home.svg') }}" alt=""> Home</a></li>
+      <li><a href="{{ url_for('dataset') }}" {% if request.endpoint == 'dataset' %}aria-current="page"{% endif %}><img class="icon" src="{{ url_for('static', filename='img/icons/circle-stack.svg') }}" alt=""> Dataset</a></li>
+      <li><a href="{{ url_for('algorithm') }}" {% if request.endpoint == 'algorithm' %}aria-current="page"{% endif %}><img class="icon" src="{{ url_for('static', filename='img/icons/code-bracket.svg') }}" alt=""> Algorithm</a></li>
+      <li><a href="{{ url_for('people') }}" {% if request.endpoint == 'people' %}aria-current="page"{% endif %}><img class="icon" src="{{ url_for('static', filename='img/icons/user-group.svg') }}" alt=""> People</a></li>
+    </ul>
+  </nav>
+</header>
