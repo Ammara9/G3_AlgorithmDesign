@@ -1,0 +1,1525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Source: OpenAlex (https://openalex.org), retrieved 19 October 2026. -->
+<!-- 50 journal articles, 2018 to 2020, 10 per publisher, drawn at random from a cleaned sample of 84. -->
+<!-- citations_per_year = citation_count / (2026 - year), rounded to two decimals. -->
+<articles>
+    <article id="A001">
+        <title>Agile Model-Driven Methodology to Implement Corporate Social Responsibility</title>
+        <keywords>
+            <keyword>corporate social responsibility</keyword>
+            <keyword>agile methods</keyword>
+            <keyword>model-driven engineering</keyword>
+            <keyword>information systems integration</keyword>
+        </keywords>
+        <doi>10.1016/j.cie.2018.11.052</doi>
+        <url>https://doi.org/10.1016/j.cie.2018.11.052</url>
+        <year>2018</year>
+        <journal>Computers &amp; Industrial Engineering</journal>
+        <publisher>Elsevier</publisher>
+        <topic>Software engineering</topic>
+        <first_author_country>Spain</first_author_country>
+        <region>Europe</region>
+        <open_access>false</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Reyes Grangel</author>
+            <author>Cristina Campos</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>10</citation_count>
+        <citations_per_year>1.25</citations_per_year>
+    </article>
+    <article id="A002">
+        <title>Flexible elliptic curve cryptography coprocessor using scalable finite field arithmetic blocks on FPGAs</title>
+        <keywords>
+            <keyword>elliptic curve cryptography</keyword>
+            <keyword>coprocessor</keyword>
+            <keyword>FPGA implementation</keyword>
+            <keyword>finite field arithmetic</keyword>
+            <keyword>elliptic curve scalar multiplication</keyword>
+            <keyword>hardware resource utilization</keyword>
+            <keyword>timing performance</keyword>
+        </keywords>
+        <doi>10.1016/j.micpro.2018.09.003</doi>
+        <url>https://doi.org/10.1016/j.micpro.2018.09.003</url>
+        <year>2018</year>
+        <journal>Microprocessors and Microsystems</journal>
+        <publisher>Elsevier</publisher>
+        <topic>Cybersecurity and cryptography</topic>
+        <first_author_country>Canada</first_author_country>
+        <region>North America</region>
+        <open_access>false</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>K.C. Cinnati Loi</author>
+            <author>Seok‐Bum Ko</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>13</citation_count>
+        <citations_per_year>1.62</citations_per_year>
+    </article>
+    <article id="A003">
+        <title>Quantitative security analysis of a dynamic network system under lateral movement-based attacks</title>
+        <keywords>
+            <keyword>lateral movement attacks</keyword>
+            <keyword>state-space model</keyword>
+            <keyword>piecewise constant approximation</keyword>
+            <keyword>time-varying transition rates</keyword>
+            <keyword>system recovery</keyword>
+            <keyword>critical infrastructure security</keyword>
+        </keywords>
+        <doi>10.1016/j.ress.2018.11.022</doi>
+        <url>https://doi.org/10.1016/j.ress.2018.11.022</url>
+        <year>2018</year>
+        <journal>Reliability Engineering &amp; System Safety</journal>
+        <publisher>Elsevier</publisher>
+        <topic>Cybersecurity and cryptography</topic>
+        <first_author_country>China</first_author_country>
+        <region>Asia</region>
+        <open_access>false</open_access>
+        <number_of_authors>5</number_of_authors>
+        <name_of_authors>
+            <author>Yu Shi</author>
+            <author>Xiaolin Chang</author>
+            <author>Ricardo J. Rodríguez</author>
+            <author>Zhenjiang Zhang</author>
+            <author>Kishor Shridharbhai Trivedi</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>10</citation_count>
+        <citations_per_year>1.25</citations_per_year>
+    </article>
+    <article id="A004">
+        <title>Cognitive security: A comprehensive study of cognitive science in cybersecurity</title>
+        <keywords>
+            <keyword>cognitive security</keyword>
+            <keyword>cybersecurity operations</keyword>
+            <keyword>financial analysts</keyword>
+            <keyword>cognitive processes</keyword>
+            <keyword>big data</keyword>
+            <keyword>machine learning</keyword>
+            <keyword>decision support system</keyword>
+            <keyword>human-in-the-loop</keyword>
+            <keyword>OODA loop</keyword>
+            <keyword>MAPE-K</keyword>
+        </keywords>
+        <doi>10.1016/j.jisa.2019.06.008</doi>
+        <url>https://doi.org/10.1016/j.jisa.2019.06.008</url>
+        <year>2019</year>
+        <journal>Journal of Information Security and Applications</journal>
+        <publisher>Elsevier</publisher>
+        <topic>Cybersecurity and cryptography</topic>
+        <first_author_country>Ecuador</first_author_country>
+        <region>Latin America</region>
+        <open_access>false</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Roberto Andrade</author>
+            <author>Sang Guun Yoo</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>89</citation_count>
+        <citations_per_year>12.71</citations_per_year>
+    </article>
+    <article id="A005">
+        <title>QoS-aware secure transaction framework for internet of things using blockchain mechanism</title>
+        <keywords>
+            <keyword>Internet of Things security</keyword>
+            <keyword>blockchain</keyword>
+            <keyword>quality of service</keyword>
+            <keyword>secure transactions</keyword>
+            <keyword>MQTT broker</keyword>
+            <keyword>resource recovery</keyword>
+            <keyword>risk modeling</keyword>
+            <keyword>virtual private networks</keyword>
+            <keyword>mobile application framework</keyword>
+            <keyword>data privacy</keyword>
+        </keywords>
+        <doi>10.1016/j.jnca.2019.06.014</doi>
+        <url>https://doi.org/10.1016/j.jnca.2019.06.014</url>
+        <year>2019</year>
+        <journal>Journal of Network and Computer Applications</journal>
+        <publisher>Elsevier</publisher>
+        <topic>Blockchain</topic>
+        <first_author_country>India</first_author_country>
+        <region>Asia</region>
+        <open_access>false</open_access>
+        <number_of_authors>4</number_of_authors>
+        <name_of_authors>
+            <author>Deepsubhra Guha Roy</author>
+            <author>Puja Das</author>
+            <author>Debashis De</author>
+            <author>Rajkumar Buyya</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>48</citation_count>
+        <citations_per_year>6.86</citations_per_year>
+    </article>
+    <article id="A006">
+        <title>A Survey on Blockchain for Information Systems Management and Security</title>
+        <keywords>
+            <keyword>blockchain</keyword>
+            <keyword>information systems management</keyword>
+            <keyword>information systems security</keyword>
+            <keyword>blockchain as a service</keyword>
+            <keyword>cloud computing</keyword>
+            <keyword>edge computing</keyword>
+            <keyword>blockchain applications</keyword>
+        </keywords>
+        <doi>10.1016/j.ipm.2020.102397</doi>
+        <url>https://doi.org/10.1016/j.ipm.2020.102397</url>
+        <year>2020</year>
+        <journal>Information Processing &amp; Management</journal>
+        <publisher>Elsevier</publisher>
+        <topic>Blockchain</topic>
+        <first_author_country>United States</first_author_country>
+        <region>North America</region>
+        <open_access>false</open_access>
+        <number_of_authors>5</number_of_authors>
+        <name_of_authors>
+            <author>David Berdik</author>
+            <author>Safa Otoum</author>
+            <author>Nikolas Schmidt</author>
+            <author>Dylan Porter</author>
+            <author>Yaser Jararweh</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>580</citation_count>
+        <citations_per_year>96.67</citations_per_year>
+    </article>
+    <article id="A007">
+        <title>A survey of blockchain consensus algorithms performance evaluation criteria</title>
+        <keywords>
+            <keyword>blockchain consensus</keyword>
+            <keyword>performance standards</keyword>
+            <keyword>paired comparison method</keyword>
+            <keyword>throughput</keyword>
+            <keyword>mining profitability</keyword>
+            <keyword>decentralization (distributed systems)</keyword>
+            <keyword>security challenges</keyword>
+        </keywords>
+        <doi>10.1016/j.eswa.2020.113385</doi>
+        <url>https://doi.org/10.1016/j.eswa.2020.113385</url>
+        <year>2020</year>
+        <journal>Expert Systems with Applications</journal>
+        <publisher>Elsevier</publisher>
+        <topic>Blockchain</topic>
+        <first_author_country>China</first_author_country>
+        <region>Asia</region>
+        <open_access>false</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Seyed Mojtaba Hosseini Bamakan</author>
+            <author>Amirhossein Motavali</author>
+            <author>Alireza Babaei Bondarti</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>483</citation_count>
+        <citations_per_year>80.50</citations_per_year>
+    </article>
+    <article id="A008">
+        <title>An event study of data breaches and hospital IT spending</title>
+        <keywords>
+            <keyword>data breaches</keyword>
+            <keyword>health information technology</keyword>
+            <keyword>patient data security</keyword>
+            <keyword>data breach notification</keyword>
+            <keyword>capital expenditure</keyword>
+            <keyword>hospital financial performance</keyword>
+            <keyword>protected health information</keyword>
+        </keywords>
+        <doi>10.1016/j.hlpt.2020.04.008</doi>
+        <url>https://doi.org/10.1016/j.hlpt.2020.04.008</url>
+        <year>2020</year>
+        <journal>Health Policy and Technology</journal>
+        <publisher>Elsevier</publisher>
+        <topic>Cybersecurity and cryptography</topic>
+        <first_author_country>United States</first_author_country>
+        <region>North America</region>
+        <open_access>false</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Sung J. Choi</author>
+            <author>M. Eric Johnson</author>
+            <author>Jinhyung Lee</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>19</citation_count>
+        <citations_per_year>3.17</citations_per_year>
+    </article>
+    <article id="A009">
+        <title>Are game engines software frameworks? A three-perspective study</title>
+        <keywords>
+            <keyword>game engines</keyword>
+            <keyword>software framework</keyword>
+            <keyword>open source software</keyword>
+            <keyword>video games</keyword>
+            <keyword>software reuse</keyword>
+            <keyword>code complexity</keyword>
+            <keyword>developer survey</keyword>
+            <keyword>GitHub</keyword>
+            <keyword>programming languages</keyword>
+            <keyword>software engineering research</keyword>
+        </keywords>
+        <doi>10.1016/j.jss.2020.110846</doi>
+        <url>https://doi.org/10.1016/j.jss.2020.110846</url>
+        <year>2020</year>
+        <journal>Journal of Systems and Software</journal>
+        <publisher>Elsevier</publisher>
+        <topic>Software engineering</topic>
+        <first_author_country>Canada</first_author_country>
+        <region>North America</region>
+        <open_access>true</open_access>
+        <number_of_authors>5</number_of_authors>
+        <name_of_authors>
+            <author>Cristiano Politowski</author>
+            <author>Fabio Petrillo</author>
+            <author>João Eduardo Montandon</author>
+            <author>Marco Tulio Valente</author>
+            <author>Yann‐Gaël Guéhéneuc</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>37</citation_count>
+        <citations_per_year>6.17</citations_per_year>
+    </article>
+    <article id="A010">
+        <title>Increased IT security by model-based vulnerability analysis of IT/I&amp;C systems and proof of ISO conformity</title>
+        <keywords>
+            <keyword>cybersecurity</keyword>
+            <keyword>industrial control systems</keyword>
+            <keyword>IEC 62443</keyword>
+            <keyword>entity model</keyword>
+            <keyword>distillation</keyword>
+            <keyword>model factory</keyword>
+            <keyword>security measures</keyword>
+        </keywords>
+        <doi>10.1016/j.ifacol.2020.12.262</doi>
+        <url>https://doi.org/10.1016/j.ifacol.2020.12.262</url>
+        <year>2020</year>
+        <journal>IFAC-PapersOnLine</journal>
+        <publisher>Elsevier</publisher>
+        <topic>Cybersecurity and cryptography</topic>
+        <first_author_country>Germany</first_author_country>
+        <region>Europe</region>
+        <open_access>true</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Mathias Lange</author>
+            <author>Yongjian Ding</author>
+            <author>Martin Szemkus</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>0</citation_count>
+        <citations_per_year>0.00</citations_per_year>
+    </article>
+    <article id="A011">
+        <title>Blockchain and OECD data repositories: opportunities and policymaking implications</title>
+        <keywords>
+            <keyword>blockchain</keyword>
+            <keyword>data provenance</keyword>
+            <keyword>data sharing</keyword>
+            <keyword>smart contracts</keyword>
+            <keyword>Ethereum</keyword>
+            <keyword>policy transparency</keyword>
+            <keyword>accountability</keyword>
+            <keyword>evidence-based policy</keyword>
+            <keyword>data reuse</keyword>
+            <keyword>immutability</keyword>
+            <keyword>research reproducibility</keyword>
+            <keyword>open data</keyword>
+            <keyword>policy evaluation</keyword>
+            <keyword>anonymity</keyword>
+        </keywords>
+        <doi>10.1108/lht-12-2017-0276</doi>
+        <url>https://doi.org/10.1108/lht-12-2017-0276</url>
+        <year>2018</year>
+        <journal>Library Hi Tech</journal>
+        <publisher>Emerald</publisher>
+        <topic>Blockchain</topic>
+        <first_author_country>Spain</first_author_country>
+        <region>Europe</region>
+        <open_access>false</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Miguel‐Ángel Sicilia</author>
+            <author>Anna Visvizi</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>56</citation_count>
+        <citations_per_year>7.00</citations_per_year>
+    </article>
+    <article id="A012">
+        <title>Principles and practice in impact assessment for academic libraries</title>
+        <keywords>
+            <keyword>academic libraries</keyword>
+            <keyword>library impact assessment</keyword>
+            <keyword>library performance measurement</keyword>
+            <keyword>value framework</keyword>
+            <keyword>value co-creation</keyword>
+            <keyword>value proposition</keyword>
+            <keyword>ACRL Framework</keyword>
+            <keyword>balanced scorecard</keyword>
+            <keyword>LibQUAL+</keyword>
+            <keyword>logic model</keyword>
+            <keyword>electronic resources</keyword>
+            <keyword>open data</keyword>
+            <keyword>library cooperation</keyword>
+        </keywords>
+        <doi>10.1108/ils-06-2017-0053</doi>
+        <url>https://doi.org/10.1108/ils-06-2017-0053</url>
+        <year>2018</year>
+        <journal>Information and Learning Sciences</journal>
+        <publisher>Emerald</publisher>
+        <topic>Library services and management</topic>
+        <first_author_country>United Kingdom</first_author_country>
+        <region>Europe</region>
+        <open_access>false</open_access>
+        <number_of_authors>1</number_of_authors>
+        <name_of_authors>
+            <author>Christine J. Urquhart</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>21</citation_count>
+        <citations_per_year>2.62</citations_per_year>
+    </article>
+    <article id="A013">
+        <title>Profile reliability to improve recommendation in social-learning context</title>
+        <keywords>
+            <keyword>recommender systems</keyword>
+            <keyword>social learning</keyword>
+            <keyword>conflicts of interest</keyword>
+            <keyword>interest structure</keyword>
+            <keyword>semantic relations</keyword>
+            <keyword>K-means clustering</keyword>
+            <keyword>social networks</keyword>
+            <keyword>Moodle</keyword>
+            <keyword>Delicious</keyword>
+            <keyword>online learning</keyword>
+        </keywords>
+        <doi>10.1108/oir-02-2017-0068</doi>
+        <url>https://doi.org/10.1108/oir-02-2017-0068</url>
+        <year>2018</year>
+        <journal>Online Information Review</journal>
+        <publisher>Emerald</publisher>
+        <topic>Recommender systems</topic>
+        <first_author_country>Tunisia</first_author_country>
+        <region>Africa</region>
+        <open_access>true</open_access>
+        <number_of_authors>6</number_of_authors>
+        <name_of_authors>
+            <author>Corinne Amel Zayani</author>
+            <author>Leïla Ghorbel</author>
+            <author>Ikram Amous</author>
+            <author>Manel Mezghanni</author>
+            <author>André Péninou</author>
+            <author>Florence Sèdes</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>8</citation_count>
+        <citations_per_year>1.00</citations_per_year>
+    </article>
+    <article id="A014">
+        <title>Competing eBook acquisition models: which model best serves a community college library?</title>
+        <keywords>
+            <keyword>community college libraries</keyword>
+            <keyword>patron-driven acquisition</keyword>
+            <keyword>cost per use</keyword>
+            <keyword>usage data</keyword>
+            <keyword>academic libraries</keyword>
+            <keyword>collection development</keyword>
+        </keywords>
+        <doi>10.1108/cc-07-2019-0019</doi>
+        <url>https://doi.org/10.1108/cc-07-2019-0019</url>
+        <year>2019</year>
+        <journal>Collection and Curation</journal>
+        <publisher>Emerald</publisher>
+        <topic>Library collections and digital resources</topic>
+        <first_author_country>United States</first_author_country>
+        <region>North America</region>
+        <open_access>false</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Michael LaMagna</author>
+            <author>Erica Swenson Danowitz</author>
+            <author>Andrea Rodgers</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>5</citation_count>
+        <citations_per_year>0.71</citations_per_year>
+    </article>
+    <article id="A015">
+        <title>Mediating effect of student engagement on social network sites and academic performance of medical students</title>
+        <keywords>
+            <keyword>social media use</keyword>
+            <keyword>student engagement</keyword>
+            <keyword>academic performance</keyword>
+            <keyword>medical students</keyword>
+            <keyword>cognitive engagement</keyword>
+            <keyword>emotional engagement</keyword>
+            <keyword>behavioral engagement</keyword>
+            <keyword>mediating effect</keyword>
+            <keyword>higher education learning</keyword>
+        </keywords>
+        <doi>10.1108/ijssp-05-2019-0093</doi>
+        <url>https://doi.org/10.1108/ijssp-05-2019-0093</url>
+        <year>2019</year>
+        <journal>International Journal of Sociology and Social Policy</journal>
+        <publisher>Emerald</publisher>
+        <topic>Educational technology</topic>
+        <first_author_country>India</first_author_country>
+        <region>Asia</region>
+        <open_access>false</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Ishfaq Hussain Bhat</author>
+            <author>Shilpi Gupta</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>21</citation_count>
+        <citations_per_year>3.00</citations_per_year>
+    </article>
+    <article id="A016">
+        <title>Self-perceptions of English and Welsh constables and sergeants preparedness for online crime</title>
+        <keywords>
+            <keyword>cybercrime</keyword>
+            <keyword>police preparedness</keyword>
+            <keyword>police training</keyword>
+            <keyword>age as predictor</keyword>
+            <keyword>online crime</keyword>
+            <keyword>law enforcement capabilities</keyword>
+        </keywords>
+        <doi>10.1108/pijpsm-08-2019-0142</doi>
+        <url>https://doi.org/10.1108/pijpsm-08-2019-0142</url>
+        <year>2019</year>
+        <journal>Policing An International Journal</journal>
+        <publisher>Emerald</publisher>
+        <topic>Cybercrime and fraud</topic>
+        <first_author_country>United States</first_author_country>
+        <region>North America</region>
+        <open_access>false</open_access>
+        <number_of_authors>4</number_of_authors>
+        <name_of_authors>
+            <author>George W. Burruss</author>
+            <author>Christian Jordan Howell</author>
+            <author>Adam M. Bossler</author>
+            <author>Thomas J. Holt</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>36</citation_count>
+        <citations_per_year>5.14</citations_per_year>
+    </article>
+    <article id="A017">
+        <title>Consumer Electronics Show 2020, Las Vegas, conference report, Part 1</title>
+        <keywords>
+            <keyword>library technology</keyword>
+            <keyword>library services</keyword>
+            <keyword>library automation</keyword>
+            <keyword>library equipment</keyword>
+            <keyword>library software</keyword>
+        </keywords>
+        <doi>10.1108/lhtn-04-2020-0030</doi>
+        <url>https://doi.org/10.1108/lhtn-04-2020-0030</url>
+        <year>2020</year>
+        <journal>Library Hi Tech News</journal>
+        <publisher>Emerald</publisher>
+        <topic>Library services and management</topic>
+        <first_author_country>United Kingdom</first_author_country>
+        <region>Europe</region>
+        <open_access>false</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Martin A. Kesselman</author>
+            <author>Wilson Esquivel</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>0</citation_count>
+        <citations_per_year>0.00</citations_per_year>
+    </article>
+    <article id="A018">
+        <title>Intelligent libraries: a review on expert systems, artificial intelligence, and robot</title>
+        <keywords>
+            <keyword>intelligent libraries</keyword>
+            <keyword>expert systems</keyword>
+            <keyword>artificial intelligence</keyword>
+            <keyword>library robots</keyword>
+            <keyword>library automation</keyword>
+            <keyword>library technical services</keyword>
+            <keyword>reference services</keyword>
+            <keyword>information retrieval</keyword>
+            <keyword>human-robot interaction</keyword>
+        </keywords>
+        <doi>10.1108/lht-02-2020-0038</doi>
+        <url>https://doi.org/10.1108/lht-02-2020-0038</url>
+        <year>2020</year>
+        <journal>Library Hi Tech</journal>
+        <publisher>Emerald</publisher>
+        <topic>Library services and management</topic>
+        <first_author_country>Hungary</first_author_country>
+        <region>Europe</region>
+        <open_access>true</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Asefeh Asemi</author>
+            <author>Andrea Kő</author>
+            <author>Mohsen Nowkarizi</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>226</citation_count>
+        <citations_per_year>37.67</citations_per_year>
+    </article>
+    <article id="A019">
+        <title>Strategy of using ICT in ODL to disseminate higher education in tribal communities: a case of MP, India</title>
+        <keywords>
+            <keyword>open and distance learning</keyword>
+            <keyword>information and communication technologies</keyword>
+            <keyword>higher education access</keyword>
+            <keyword>tribal communities</keyword>
+            <keyword>Madhya Pradesh</keyword>
+            <keyword>educational infrastructure</keyword>
+            <keyword>socioeconomic barriers to education</keyword>
+            <keyword>student empowerment</keyword>
+            <keyword>Sustainable Development Goals</keyword>
+        </keywords>
+        <doi>10.1108/aaouj-05-2020-0029</doi>
+        <url>https://doi.org/10.1108/aaouj-05-2020-0029</url>
+        <year>2020</year>
+        <journal>AAOU Journal/AAOU journal</journal>
+        <publisher>Emerald</publisher>
+        <topic>Educational technology</topic>
+        <first_author_country>India</first_author_country>
+        <region>Asia</region>
+        <open_access>true</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Subash Ranjan Nayak</author>
+            <author>Nikhil Kant</author>
+            <author>Kumari Anjali</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>28</citation_count>
+        <citations_per_year>4.67</citations_per_year>
+    </article>
+    <article id="A020">
+        <title>The application of scam compliance models to investment fraud offending</title>
+        <keywords>
+            <keyword>investment fraud</keyword>
+            <keyword>trust building</keyword>
+            <keyword>social influence</keyword>
+            <keyword>remote device access</keyword>
+        </keywords>
+        <doi>10.1108/jcrpp-12-2019-0073</doi>
+        <url>https://doi.org/10.1108/jcrpp-12-2019-0073</url>
+        <year>2020</year>
+        <journal>Journal of Criminological Research Policy and Practice</journal>
+        <publisher>Emerald</publisher>
+        <topic>Cybercrime and fraud</topic>
+        <first_author_country>Australia</first_author_country>
+        <region>Oceania</region>
+        <open_access>true</open_access>
+        <number_of_authors>4</number_of_authors>
+        <name_of_authors>
+            <author>David Lacey</author>
+            <author>Sigi Goode</author>
+            <author>Jerry T. Parwada</author>
+            <author>Dennis Gibson</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>24</citation_count>
+        <citations_per_year>4.00</citations_per_year>
+    </article>
+    <article id="A021">
+        <title>Activity Recommendation Model Using Rank Correlation for Chronic Stress Management</title>
+        <keywords>
+            <keyword>activity recommendation</keyword>
+            <keyword>rank correlation</keyword>
+            <keyword>Spearman correlation</keyword>
+            <keyword>Perceived Stress Scale</keyword>
+            <keyword>data sparsity</keyword>
+            <keyword>cold start</keyword>
+            <keyword>missing data imputation</keyword>
+            <keyword>quality of life</keyword>
+        </keywords>
+        <doi>10.3390/app9204284</doi>
+        <url>https://doi.org/10.3390/app9204284</url>
+        <year>2019</year>
+        <journal>Applied Sciences</journal>
+        <publisher>MDPI</publisher>
+        <topic>Recommender systems</topic>
+        <first_author_country>South Korea</first_author_country>
+        <region>Asia</region>
+        <open_access>true</open_access>
+        <number_of_authors>4</number_of_authors>
+        <name_of_authors>
+            <author>JiSoo Kang</author>
+            <author>Dong-Hoon Shin</author>
+            <author>Ji-Won Baek</author>
+            <author>Kyungyong Chung</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>22</citation_count>
+        <citations_per_year>3.14</citations_per_year>
+    </article>
+    <article id="A022">
+        <title>BlockDeepNet: A Blockchain-Based Secure Deep Learning for IoT Network</title>
+        <keywords>
+            <keyword>blockchain</keyword>
+            <keyword>Internet of Things</keyword>
+            <keyword>collaborative deep learning</keyword>
+            <keyword>data poisoning</keyword>
+            <keyword>privacy preservation</keyword>
+            <keyword>data integrity</keyword>
+            <keyword>5G</keyword>
+            <keyword>industrial automation</keyword>
+            <keyword>big data</keyword>
+        </keywords>
+        <doi>10.3390/su11143974</doi>
+        <url>https://doi.org/10.3390/su11143974</url>
+        <year>2019</year>
+        <journal>Sustainability</journal>
+        <publisher>MDPI</publisher>
+        <topic>Blockchain</topic>
+        <first_author_country>South Korea</first_author_country>
+        <region>Asia</region>
+        <open_access>true</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Shailendra Rathore</author>
+            <author>Yi Feng Pan</author>
+            <author>Jong Hyuk Park</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>87</citation_count>
+        <citations_per_year>12.43</citations_per_year>
+    </article>
+    <article id="A023">
+        <title>Discovering Memory-Based Preferences for POI Recommendation in Location-Based Social Networks</title>
+        <keywords>
+            <keyword>point-of-interest recommendation</keyword>
+            <keyword>location-based social networks</keyword>
+            <keyword>Ebbinghaus forgetting curve</keyword>
+            <keyword>check-in data</keyword>
+            <keyword>user preference similarity</keyword>
+            <keyword>Foursquare</keyword>
+            <keyword>travel choice</keyword>
+        </keywords>
+        <doi>10.3390/ijgi8060279</doi>
+        <url>https://doi.org/10.3390/ijgi8060279</url>
+        <year>2019</year>
+        <journal>ISPRS International Journal of Geo-Information</journal>
+        <publisher>MDPI</publisher>
+        <topic>Recommender systems</topic>
+        <first_author_country>China</first_author_country>
+        <region>Asia</region>
+        <open_access>true</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Mingxin Gan</author>
+            <author>Ling Chao Gao</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>23</citation_count>
+        <citations_per_year>3.29</citations_per_year>
+    </article>
+    <article id="A024">
+        <title>Empirical Study of Software Defect Prediction: A Systematic Mapping</title>
+        <keywords>
+            <keyword>software defect prediction</keyword>
+            <keyword>software quality</keyword>
+            <keyword>limited training data</keyword>
+            <keyword>new projects</keyword>
+            <keyword>empirical software engineering</keyword>
+            <keyword>literature mapping</keyword>
+        </keywords>
+        <doi>10.3390/sym11020212</doi>
+        <url>https://doi.org/10.3390/sym11020212</url>
+        <year>2019</year>
+        <journal>Symmetry</journal>
+        <publisher>MDPI</publisher>
+        <topic>Software engineering</topic>
+        <first_author_country>Vietnam</first_author_country>
+        <region>Asia</region>
+        <open_access>true</open_access>
+        <number_of_authors>6</number_of_authors>
+        <name_of_authors>
+            <author>Lê Hoàng Sơn</author>
+            <author>Nakul Pritam</author>
+            <author>Manju Khari</author>
+            <author>Raghvendra Kumar</author>
+            <author>Pham Thi Minh Phuong</author>
+            <author>Pham Huy Thong</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>102</citation_count>
+        <citations_per_year>14.57</citations_per_year>
+    </article>
+    <article id="A025">
+        <title>Modelling and Simulation of a Cloud Platform for Sharing Distributed Digital Fabrication Resources</title>
+        <keywords>
+            <keyword>digital fabrication</keyword>
+            <keyword>FabLab</keyword>
+            <keyword>cloud platform</keyword>
+            <keyword>resource sharing</keyword>
+            <keyword>machine-to-machine communication</keyword>
+            <keyword>REST API</keyword>
+            <keyword>load testing</keyword>
+            <keyword>performance bottlenecks</keyword>
+            <keyword>CloudSim simulation</keyword>
+            <keyword>latency estimation</keyword>
+            <keyword>technology-enhanced learning</keyword>
+        </keywords>
+        <doi>10.3390/computers8020047</doi>
+        <url>https://doi.org/10.3390/computers8020047</url>
+        <year>2019</year>
+        <journal>Computers</journal>
+        <publisher>MDPI</publisher>
+        <topic>Cloud computing and Internet of Things</topic>
+        <first_author_country>Spain</first_author_country>
+        <region>Europe</region>
+        <open_access>true</open_access>
+        <number_of_authors>4</number_of_authors>
+        <name_of_authors>
+            <author>Gianluca Cornetta</author>
+            <author>Francisco Javier Mateos</author>
+            <author>Abdellah Touhafi</author>
+            <author>Gabriel‐Miro Muntean</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>5</citation_count>
+        <citations_per_year>0.71</citations_per_year>
+    </article>
+    <article id="A026">
+        <title>Portable Smart Spectrometer Integrated with Blockchain and Big Data Technology</title>
+        <keywords>
+            <keyword>portable spectrometer</keyword>
+            <keyword>blockchain</keyword>
+            <keyword>big data</keyword>
+            <keyword>data tamper prevention</keyword>
+            <keyword>data reuse</keyword>
+            <keyword>data monitoring</keyword>
+        </keywords>
+        <doi>10.3390/app9163279</doi>
+        <url>https://doi.org/10.3390/app9163279</url>
+        <year>2019</year>
+        <journal>Applied Sciences</journal>
+        <publisher>MDPI</publisher>
+        <topic>Blockchain</topic>
+        <first_author_country>China</first_author_country>
+        <region>Asia</region>
+        <open_access>true</open_access>
+        <number_of_authors>5</number_of_authors>
+        <name_of_authors>
+            <author>Jianwei Yin</author>
+            <author>Yinglin Yang</author>
+            <author>Weibin Hong</author>
+            <author>Yefan Cai</author>
+            <author>Xiangyang Yu</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>4</citation_count>
+        <citations_per_year>0.57</citations_per_year>
+    </article>
+    <article id="A027">
+        <title>The MOSAICS Model of Educational Approaches for Teaching the Practice of Software Project Management</title>
+        <keywords>
+            <keyword>software project management</keyword>
+            <keyword>software project management education</keyword>
+            <keyword>teaching methods</keyword>
+            <keyword>information technology students</keyword>
+            <keyword>practical teaching methods</keyword>
+            <keyword>course design</keyword>
+        </keywords>
+        <doi>10.3390/educsci9010026</doi>
+        <url>https://doi.org/10.3390/educsci9010026</url>
+        <year>2019</year>
+        <journal>Education Sciences</journal>
+        <publisher>MDPI</publisher>
+        <topic>Educational technology</topic>
+        <first_author_country>Romania</first_author_country>
+        <region>Europe</region>
+        <open_access>true</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Costin-Anton Boiangiu</author>
+            <author>Iulia-Cristina Stănică</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>4</citation_count>
+        <citations_per_year>0.57</citations_per_year>
+    </article>
+    <article id="A028">
+        <title>Value-Oriented Requirements: Eliciting Domain Requirements from Social Network Services to Evolve Software Product Lines</title>
+        <keywords>
+            <keyword>requirements analysis</keyword>
+            <keyword>social networking sites</keyword>
+            <keyword>software product lines</keyword>
+            <keyword>software evolution</keyword>
+            <keyword>user requirements</keyword>
+            <keyword>user opinions</keyword>
+            <keyword>Facebook</keyword>
+            <keyword>Twitter</keyword>
+            <keyword>requirements engineering</keyword>
+        </keywords>
+        <doi>10.3390/app9193944</doi>
+        <url>https://doi.org/10.3390/app9193944</url>
+        <year>2019</year>
+        <journal>Applied Sciences</journal>
+        <publisher>MDPI</publisher>
+        <topic>Software engineering</topic>
+        <first_author_country>South Korea</first_author_country>
+        <region>Asia</region>
+        <open_access>true</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Nazakat Ali</author>
+            <author>Jang‐Eui Hong</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>13</citation_count>
+        <citations_per_year>1.86</citations_per_year>
+    </article>
+    <article id="A029">
+        <title>An Innovative Industry 4.0 Cloud Data Transfer Method for an Automated Waste Collection System</title>
+        <keywords>
+            <keyword>Industry 4.0</keyword>
+            <keyword>cloud data transmission</keyword>
+            <keyword>automated waste collection</keyword>
+            <keyword>data encryption</keyword>
+            <keyword>data encoding</keyword>
+            <keyword>smart sensors</keyword>
+            <keyword>data security</keyword>
+            <keyword>real-time data monitoring</keyword>
+            <keyword>smart factory</keyword>
+            <keyword>waste management</keyword>
+        </keywords>
+        <doi>10.3390/su12051839</doi>
+        <url>https://doi.org/10.3390/su12051839</url>
+        <year>2020</year>
+        <journal>Sustainability</journal>
+        <publisher>MDPI</publisher>
+        <topic>Cybersecurity and cryptography</topic>
+        <first_author_country>Romania</first_author_country>
+        <region>Europe</region>
+        <open_access>true</open_access>
+        <number_of_authors>4</number_of_authors>
+        <name_of_authors>
+            <author>Costel Emil Coteț</author>
+            <author>Gicu Călin Deac</author>
+            <author>Crina Narcisa Deac</author>
+            <author>Cicerone Laurențiu Popa</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>34</citation_count>
+        <citations_per_year>5.67</citations_per_year>
+    </article>
+    <article id="A030">
+        <title>Assessment of End-User Susceptibility to Cybersecurity Threats in Saudi Arabia by Simulating Phishing Attacks</title>
+        <keywords>
+            <keyword>phishing</keyword>
+            <keyword>phishing simulation</keyword>
+            <keyword>cybersecurity awareness</keyword>
+            <keyword>cybersecurity knowledge</keyword>
+            <keyword>human factors in cybersecurity</keyword>
+            <keyword>Saudi Arabia</keyword>
+        </keywords>
+        <doi>10.3390/info11120547</doi>
+        <url>https://doi.org/10.3390/info11120547</url>
+        <year>2020</year>
+        <journal>Information</journal>
+        <publisher>MDPI</publisher>
+        <topic>Cybersecurity and cryptography</topic>
+        <first_author_country>Saudi Arabia</first_author_country>
+        <region>Middle East</region>
+        <open_access>true</open_access>
+        <number_of_authors>4</number_of_authors>
+        <name_of_authors>
+            <author>Dania Aljeaid</author>
+            <author>Amal Alzhrani</author>
+            <author>Mona Alrougi</author>
+            <author>Oroob Almalki</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>28</citation_count>
+        <citations_per_year>4.67</citations_per_year>
+    </article>
+    <article id="A031">
+        <title>Assessing lexical similarity between short sentences of source code based on granularity</title>
+        <keywords>
+            <keyword>code similarity</keyword>
+            <keyword>word similarity</keyword>
+            <keyword>code plagiarism detection</keyword>
+            <keyword>code reuse</keyword>
+            <keyword>code clones</keyword>
+            <keyword>Levenshtein distance</keyword>
+            <keyword>cosine similarity</keyword>
+            <keyword>Hamming distance</keyword>
+        </keywords>
+        <doi>10.1007/s41870-018-0213-1</doi>
+        <url>https://doi.org/10.1007/s41870-018-0213-1</url>
+        <year>2018</year>
+        <journal>International Journal of Information Technology</journal>
+        <publisher>Springer Nature</publisher>
+        <topic>Software engineering</topic>
+        <first_author_country>India</first_author_country>
+        <region>Asia</region>
+        <open_access>false</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Harpreet Kaur</author>
+            <author>Raman Maini</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>8</citation_count>
+        <citations_per_year>1.00</citations_per_year>
+    </article>
+    <article id="A032">
+        <title>Highly efficient $$\textit{GF}(2^8)$$ GF ( 2 8 ) inversion circuit based on hybrid GF representations</title>
+        <keywords>
+            <keyword>finite field arithmetic</keyword>
+            <keyword>redundant representations</keyword>
+            <keyword>normal bases</keyword>
+            <keyword>AES S-box</keyword>
+            <keyword>area-time efficiency</keyword>
+            <keyword>hardware circuit design</keyword>
+        </keywords>
+        <doi>10.1007/s13389-018-0187-8</doi>
+        <url>https://doi.org/10.1007/s13389-018-0187-8</url>
+        <year>2018</year>
+        <journal>Journal of Cryptographic Engineering</journal>
+        <publisher>Springer Nature</publisher>
+        <topic>Cybersecurity and cryptography</topic>
+        <first_author_country>Japan</first_author_country>
+        <region>Asia</region>
+        <open_access>false</open_access>
+        <number_of_authors>4</number_of_authors>
+        <name_of_authors>
+            <author>Rei Ueno</author>
+            <author>Naofumi Homma</author>
+            <author>Yasuyuki Nogami</author>
+            <author>Takafumi Aoki</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>16</citation_count>
+        <citations_per_year>2.00</citations_per_year>
+    </article>
+    <article id="A033">
+        <title>Clinical trials in radiology and data sharing: results from a survey of the European Society of Radiology (ESR) research committee</title>
+        <keywords>
+            <keyword>data sharing</keyword>
+            <keyword>barriers to data sharing</keyword>
+            <keyword>data protection</keyword>
+            <keyword>research ethics</keyword>
+            <keyword>data sharing platform</keyword>
+            <keyword>data access policy</keyword>
+        </keywords>
+        <doi>10.1007/s00330-019-06105-y</doi>
+        <url>https://doi.org/10.1007/s00330-019-06105-y</url>
+        <year>2019</year>
+        <journal>European Radiology</journal>
+        <publisher>Springer Nature</publisher>
+        <topic>Research data management</topic>
+        <first_author_country>Germany</first_author_country>
+        <region>Europe</region>
+        <open_access>false</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Maria Bosserdt</author>
+            <author>Bernd Hamm</author>
+            <author>Marc Dewey</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>13</citation_count>
+        <citations_per_year>1.86</citations_per_year>
+    </article>
+    <article id="A034">
+        <title>GARUSO: a gamification approach for involving stakeholders outside organizational reach in requirements engineering</title>
+        <keywords>
+            <keyword>stakeholder engagement</keyword>
+            <keyword>gamification</keyword>
+            <keyword>social media platform</keyword>
+            <keyword>stakeholder identification</keyword>
+            <keyword>end users</keyword>
+            <keyword>design principles</keyword>
+        </keywords>
+        <doi>10.1007/s00766-019-00314-z</doi>
+        <url>https://doi.org/10.1007/s00766-019-00314-z</url>
+        <year>2019</year>
+        <journal>Requirements Engineering</journal>
+        <publisher>Springer Nature</publisher>
+        <topic>Software engineering</topic>
+        <first_author_country>Switzerland</first_author_country>
+        <region>Europe</region>
+        <open_access>true</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Martina Z. Huber</author>
+            <author>Martin Glinz</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>45</citation_count>
+        <citations_per_year>6.43</citations_per_year>
+    </article>
+    <article id="A035">
+        <title>Research on Context-Awareness Mobile Tourism E-Commerce Personalized Recommendation Model</title>
+        <keywords>
+            <keyword>personalized recommendation</keyword>
+            <keyword>context-aware recommendation</keyword>
+            <keyword>collaborative filtering</keyword>
+            <keyword>data sparsity</keyword>
+            <keyword>user interest modeling</keyword>
+            <keyword>rating prediction</keyword>
+        </keywords>
+        <doi>10.1007/s11265-019-01504-2</doi>
+        <url>https://doi.org/10.1007/s11265-019-01504-2</url>
+        <year>2019</year>
+        <journal>Journal of Signal Processing Systems</journal>
+        <publisher>Springer Nature</publisher>
+        <topic>Recommender systems</topic>
+        <first_author_country>China</first_author_country>
+        <region>Asia</region>
+        <open_access>false</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Huali Pan</author>
+            <author>Zhijun Zhang</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>59</citation_count>
+        <citations_per_year>8.43</citations_per_year>
+    </article>
+    <article id="A036">
+        <title>Resource allocation based on redundancy models for high availability cloud</title>
+        <keywords>
+            <keyword>resource allocation</keyword>
+            <keyword>cloud computing</keyword>
+            <keyword>high availability</keyword>
+            <keyword>service availability</keyword>
+            <keyword>outage prevention</keyword>
+            <keyword>resource management</keyword>
+            <keyword>cost optimization</keyword>
+        </keywords>
+        <doi>10.1007/s00607-019-00728-1</doi>
+        <url>https://doi.org/10.1007/s00607-019-00728-1</url>
+        <year>2019</year>
+        <journal>Computing</journal>
+        <publisher>Springer Nature</publisher>
+        <topic>Cloud computing and Internet of Things</topic>
+        <first_author_country>Brazil</first_author_country>
+        <region>Latin America</region>
+        <open_access>false</open_access>
+        <number_of_authors>6</number_of_authors>
+        <name_of_authors>
+            <author>Glauco Estácio Gonçalves</author>
+            <author>Patrícia Takako Endo</author>
+            <author>Moisés Rodrigues</author>
+            <author>Djamel Fawzi Hadj Sadok</author>
+            <author>Judith Kelner</author>
+            <author>Calin Curescu</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>16</citation_count>
+        <citations_per_year>2.29</citations_per_year>
+    </article>
+    <article id="A037">
+        <title>A dynamic VM provisioning and de-provisioning based cost-efficient deadline-aware scheduling algorithm for Big Data workflow applications in a cloud environment</title>
+        <keywords>
+            <keyword>workflow scheduling</keyword>
+            <keyword>deadline-aware scheduling</keyword>
+            <keyword>virtual machine provisioning</keyword>
+            <keyword>cost efficiency</keyword>
+            <keyword>big data workflows</keyword>
+            <keyword>cloud computing</keyword>
+        </keywords>
+        <doi>10.1007/s10586-020-03100-7</doi>
+        <url>https://doi.org/10.1007/s10586-020-03100-7</url>
+        <year>2020</year>
+        <journal>Cluster Computing</journal>
+        <publisher>Springer Nature</publisher>
+        <topic>Cloud computing and Internet of Things</topic>
+        <first_author_country>India</first_author_country>
+        <region>Asia</region>
+        <open_access>false</open_access>
+        <number_of_authors>4</number_of_authors>
+        <name_of_authors>
+            <author>Wakar Ahmad</author>
+            <author>Bashir Alam</author>
+            <author>Sanchit Ahuja</author>
+            <author>Sahil Malik</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>34</citation_count>
+        <citations_per_year>5.67</citations_per_year>
+    </article>
+    <article id="A038">
+        <title>Context, design and conveyance of information: ICT-enabled agricultural information services for rural women in Bangladesh</title>
+        <keywords>
+            <keyword>ICT for development</keyword>
+            <keyword>agricultural information services</keyword>
+            <keyword>rural women</keyword>
+            <keyword>women farmers</keyword>
+            <keyword>information transmission</keyword>
+            <keyword>participatory research</keyword>
+            <keyword>climate change vulnerability</keyword>
+            <keyword>marginalized women</keyword>
+            <keyword>Bangladesh</keyword>
+        </keywords>
+        <doi>10.1007/s00146-020-01016-9</doi>
+        <url>https://doi.org/10.1007/s00146-020-01016-9</url>
+        <year>2020</year>
+        <journal>AI &amp; Society</journal>
+        <publisher>Springer Nature</publisher>
+        <topic>ICT, economy and society</topic>
+        <first_author_country>United Kingdom</first_author_country>
+        <region>Europe</region>
+        <open_access>false</open_access>
+        <number_of_authors>5</number_of_authors>
+        <name_of_authors>
+            <author>Tahmina Khan Tithi</author>
+            <author>Tapas Ranjan Chakraborty</author>
+            <author>Pinash Akter</author>
+            <author>Humayra Islam</author>
+            <author>Amina Khan Sabah</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>20</citation_count>
+        <citations_per_year>3.33</citations_per_year>
+    </article>
+    <article id="A039">
+        <title>Modelling Information and Communications Technology Cyber Security Externalities Spillover Effects on Sustainable Economic Growth</title>
+        <keywords>
+            <keyword>negative externalities</keyword>
+            <keyword>spillover effects</keyword>
+            <keyword>sustainable economic growth</keyword>
+            <keyword>growth accounting</keyword>
+            <keyword>productivity indicators</keyword>
+            <keyword>capital productivity</keyword>
+        </keywords>
+        <doi>10.1007/s13132-020-00627-3</doi>
+        <url>https://doi.org/10.1007/s13132-020-00627-3</url>
+        <year>2020</year>
+        <journal>Journal of the Knowledge Economy</journal>
+        <publisher>Springer Nature</publisher>
+        <topic>ICT, economy and society</topic>
+        <first_author_country>Malaysia</first_author_country>
+        <region>Asia</region>
+        <open_access>false</open_access>
+        <number_of_authors>1</number_of_authors>
+        <name_of_authors>
+            <author>Elsadig Musa Ahmed</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>62</citation_count>
+        <citations_per_year>10.33</citations_per_year>
+    </article>
+    <article id="A040">
+        <title>Tree-Based Contrast Subspace Mining for Categorical Data</title>
+        <keywords>
+            <keyword>categorical data</keyword>
+            <keyword>binary classification</keyword>
+        </keywords>
+        <doi>10.2991/ijcis.d.201020.001</doi>
+        <url>https://doi.org/10.2991/ijcis.d.201020.001</url>
+        <year>2020</year>
+        <journal>International Journal of Computational Intelligence Systems</journal>
+        <publisher>Springer Nature</publisher>
+        <topic>Data mining and information retrieval</topic>
+        <first_author_country>Malaysia</first_author_country>
+        <region>Asia</region>
+        <open_access>true</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Florence Sia</author>
+            <author>Rayner Alfred</author>
+            <author>Yuto Lim</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>1</citation_count>
+        <citations_per_year>0.17</citations_per_year>
+    </article>
+    <article id="A041">
+        <title>Graduate LIS Students' Attitude Toward University Libraries and Personnel</title>
+        <keywords>
+            <keyword>library staff</keyword>
+            <keyword>information search skills</keyword>
+        </keywords>
+        <doi>10.1080/10572317.2018.1433416</doi>
+        <url>https://doi.org/10.1080/10572317.2018.1433416</url>
+        <year>2018</year>
+        <journal>The International Information &amp; Library Review</journal>
+        <publisher>Taylor &amp; Francis</publisher>
+        <topic>Information literacy</topic>
+        <first_author_country>Kuwait</first_author_country>
+        <region>Middle East</region>
+        <open_access>false</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Taghreed Alqudsi-ghabra</author>
+            <author>Elham Aldousari</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>2</citation_count>
+        <citations_per_year>0.25</citations_per_year>
+    </article>
+    <article id="A042">
+        <title>Hidden concerns of sharing research data by low/middle-income country scientists</title>
+        <keywords>
+            <keyword>research data sharing</keyword>
+            <keyword>open data</keyword>
+            <keyword>low- and middle-income countries</keyword>
+            <keyword>Global South</keyword>
+            <keyword>incentives and disincentives</keyword>
+            <keyword>life scientists</keyword>
+            <keyword>research infrastructure</keyword>
+            <keyword>research funding</keyword>
+            <keyword>internet access</keyword>
+            <keyword>research visibility</keyword>
+            <keyword>sub-Saharan Africa</keyword>
+        </keywords>
+        <doi>10.1080/11287462.2018.1441780</doi>
+        <url>https://doi.org/10.1080/11287462.2018.1441780</url>
+        <year>2018</year>
+        <journal>Global Bioethics</journal>
+        <publisher>Taylor &amp; Francis</publisher>
+        <topic>Research data management</topic>
+        <first_author_country>United Kingdom</first_author_country>
+        <region>Europe</region>
+        <open_access>true</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Louise M. Bezuidenhout</author>
+            <author>Ereck Chakauya</author>
+        </name_of_authors>
+        <international_collaboration>true</international_collaboration>
+        <citation_count>126</citation_count>
+        <citations_per_year>15.75</citations_per_year>
+    </article>
+    <article id="A043">
+        <title>A Phenomenographic Exploration of Female Arab Second Language Writers’ Experiences with Information in an EAP Writing Course</title>
+        <keywords>
+            <keyword>information literacy</keyword>
+            <keyword>information experience</keyword>
+            <keyword>EAP writing</keyword>
+            <keyword>EFL learners</keyword>
+            <keyword>academic writing</keyword>
+            <keyword>legitimation</keyword>
+            <keyword>local discourse</keyword>
+            <keyword>learner identity</keyword>
+            <keyword>higher education</keyword>
+        </keywords>
+        <doi>10.1080/10790195.2019.1582373</doi>
+        <url>https://doi.org/10.1080/10790195.2019.1582373</url>
+        <year>2019</year>
+        <journal>Journal of College Reading and Learning</journal>
+        <publisher>Taylor &amp; Francis</publisher>
+        <topic>Information literacy</topic>
+        <first_author_country>United Arab Emirates</first_author_country>
+        <region>Middle East</region>
+        <open_access>false</open_access>
+        <number_of_authors>1</number_of_authors>
+        <name_of_authors>
+            <author>Mehtap Kocatepe</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>1</citation_count>
+        <citations_per_year>0.14</citations_per_year>
+    </article>
+    <article id="A044">
+        <title>Classification and Subject Indexing Issues at a Mexican Library Specializing in Law Research</title>
+        <keywords>
+            <keyword>subject indexing</keyword>
+            <keyword>legal terminology</keyword>
+            <keyword>classification system development</keyword>
+            <keyword>library cooperation</keyword>
+            <keyword>UNAM</keyword>
+        </keywords>
+        <doi>10.1080/01639374.2018.1547938</doi>
+        <url>https://doi.org/10.1080/01639374.2018.1547938</url>
+        <year>2019</year>
+        <journal>Cataloging &amp; Classification Quarterly</journal>
+        <publisher>Taylor &amp; Francis</publisher>
+        <topic>Library services and management</topic>
+        <first_author_country>Mexico</first_author_country>
+        <region>Latin America</region>
+        <open_access>false</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Filiberto Felipe Martínez-Arellano</author>
+            <author>Federico Hernández Pacheco</author>
+            <author>Efrén Chávez Hernández</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>0</citation_count>
+        <citations_per_year>0.00</citations_per_year>
+    </article>
+    <article id="A045">
+        <title>Efficient web navigation prediction using hybrid models based on multiple evidence combinations</title>
+        <keywords>
+            <keyword>Markov model</keyword>
+            <keyword>deep neural network</keyword>
+            <keyword>shallow neural networks</keyword>
+            <keyword>hybrid model</keyword>
+            <keyword>n-gram language models</keyword>
+            <keyword>user preference prediction</keyword>
+        </keywords>
+        <doi>10.1080/1206212x.2019.1680011</doi>
+        <url>https://doi.org/10.1080/1206212x.2019.1680011</url>
+        <year>2019</year>
+        <journal>International Journal of Computers and Applications</journal>
+        <publisher>Taylor &amp; Francis</publisher>
+        <topic>Recommender systems</topic>
+        <first_author_country>India</first_author_country>
+        <region>Asia</region>
+        <open_access>false</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Honey Jindal</author>
+            <author>Neetu Sardana</author>
+            <author>Raghav Mehta</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>3</citation_count>
+        <citations_per_year>0.43</citations_per_year>
+    </article>
+    <article id="A046">
+        <title>Teaching with technology and higher education: a brave new world?</title>
+        <keywords>
+            <keyword>educational technology</keyword>
+            <keyword>university teaching</keyword>
+            <keyword>transformative pedagogy</keyword>
+            <keyword>academic professional development</keyword>
+            <keyword>technology adoption barriers</keyword>
+            <keyword>student needs</keyword>
+            <keyword>reflective practice</keyword>
+        </keywords>
+        <doi>10.1080/25783858.2019.1589985</doi>
+        <url>https://doi.org/10.1080/25783858.2019.1589985</url>
+        <year>2019</year>
+        <journal>PRACTICE</journal>
+        <publisher>Taylor &amp; Francis</publisher>
+        <topic>Educational technology</topic>
+        <first_author_country>United Kingdom</first_author_country>
+        <region>Europe</region>
+        <open_access>true</open_access>
+        <number_of_authors>3</number_of_authors>
+        <name_of_authors>
+            <author>Ewan Ingleby</author>
+            <author>Barbara Wilford</author>
+            <author>Clive Hedges</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>9</citation_count>
+        <citations_per_year>1.29</citations_per_year>
+    </article>
+    <article id="A047">
+        <title>A Comparative Case Study on Process Optimization and the Modern Law Library’s Involvement in Achieving Efficiency at the Law School in Times of Change</title>
+        <keywords>
+            <keyword>process optimization</keyword>
+            <keyword>law libraries</keyword>
+            <keyword>law schools</keyword>
+            <keyword>Lean Six Sigma</keyword>
+            <keyword>Agile</keyword>
+            <keyword>collection development</keyword>
+            <keyword>cross-functional teams</keyword>
+            <keyword>law librarians</keyword>
+            <keyword>process improvement</keyword>
+            <keyword>law school administration</keyword>
+            <keyword>organizational change</keyword>
+        </keywords>
+        <doi>10.1080/0270319x.2020.1831833</doi>
+        <url>https://doi.org/10.1080/0270319x.2020.1831833</url>
+        <year>2020</year>
+        <journal>Legal Reference Services Quarterly</journal>
+        <publisher>Taylor &amp; Francis</publisher>
+        <topic>Library services and management</topic>
+        <first_author_country>United States</first_author_country>
+        <region>North America</region>
+        <open_access>false</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Jessica de Perio Wittman</author>
+            <author>Kathleen Brown</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>3</citation_count>
+        <citations_per_year>0.50</citations_per_year>
+    </article>
+    <article id="A048">
+        <title>Finding the ANSCR for Media Storage: Lessons from a Renovation Reclassification</title>
+        <keywords>
+            <keyword>media storage</keyword>
+            <keyword>music recordings</keyword>
+            <keyword>library renovation</keyword>
+            <keyword>liner notes</keyword>
+            <keyword>academic libraries</keyword>
+        </keywords>
+        <doi>10.1080/10588167.2020.1793619</doi>
+        <url>https://doi.org/10.1080/10588167.2020.1793619</url>
+        <year>2020</year>
+        <journal>Music Reference Services Quarterly</journal>
+        <publisher>Taylor &amp; Francis</publisher>
+        <topic>Library services and management</topic>
+        <first_author_country>United States</first_author_country>
+        <region>North America</region>
+        <open_access>false</open_access>
+        <number_of_authors>1</number_of_authors>
+        <name_of_authors>
+            <author>Jacey Kepich</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>2</citation_count>
+        <citations_per_year>0.33</citations_per_year>
+    </article>
+    <article id="A049">
+        <title>How Rural Public Libraries Support Local Economic Development in the Mountain Plains</title>
+        <keywords>
+            <keyword>rural public libraries</keyword>
+            <keyword>local economic development</keyword>
+            <keyword>rural communities</keyword>
+            <keyword>small towns</keyword>
+            <keyword>community economic growth</keyword>
+            <keyword>librarians</keyword>
+        </keywords>
+        <doi>10.1080/01616846.2020.1776554</doi>
+        <url>https://doi.org/10.1080/01616846.2020.1776554</url>
+        <year>2020</year>
+        <journal>Public Library Quarterly</journal>
+        <publisher>Taylor &amp; Francis</publisher>
+        <topic>Library services and management</topic>
+        <first_author_country>United States</first_author_country>
+        <region>North America</region>
+        <open_access>false</open_access>
+        <number_of_authors>2</number_of_authors>
+        <name_of_authors>
+            <author>Cynthia Hughes</author>
+            <author>Stephen C. Boss</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>15</citation_count>
+        <citations_per_year>2.50</citations_per_year>
+    </article>
+    <article id="A050">
+        <title>Online technologies in dance education (China and worldwide experience)</title>
+        <keywords>
+            <keyword>online learning</keyword>
+            <keyword>professional competence</keyword>
+            <keyword>competence-based approach</keyword>
+            <keyword>student perceptions</keyword>
+            <keyword>higher education</keyword>
+        </keywords>
+        <doi>10.1080/14647893.2020.1832979</doi>
+        <url>https://doi.org/10.1080/14647893.2020.1832979</url>
+        <year>2020</year>
+        <journal>Research in Dance Education</journal>
+        <publisher>Taylor &amp; Francis</publisher>
+        <topic>Educational technology</topic>
+        <first_author_country>China</first_author_country>
+        <region>Asia</region>
+        <open_access>false</open_access>
+        <number_of_authors>1</number_of_authors>
+        <name_of_authors>
+            <author>You Yu-hui</author>
+        </name_of_authors>
+        <international_collaboration>false</international_collaboration>
+        <citation_count>66</citation_count>
+        <citations_per_year>11.00</citations_per_year>
+    </article>
+</articles>
