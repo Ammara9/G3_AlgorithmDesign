@@ -24,18 +24,13 @@
             value="{{ request.form.get('keyword', '') }}"
         >
 
-        <!-- Filter 1: Topic -->
+        <!-- Filter 1: Topic, loaded from XML -->
         <select name="topic">
             <option value="">All Topics</option>
-            {% for topic in [
-                'Software engineering',
-                'Artificial Intelligence',
-                'Cybersecurity',
-                'Cloud Computing',
-                'Education'
-            ] %}
+
+            {% for topic in topics %}
                 <option value="{{ topic }}"
-                    {% if request.form.get('topic') == topic %}selected{% endif %}>
+                    {% if request.form.get('topic', '') == topic %}selected{% endif %}>
                     {{ topic }}
                 </option>
             {% endfor %}
@@ -74,7 +69,7 @@
             <option value="">Random order</option>
             <option value="citations"
                 {% if request.form.get('sort_by') == 'citations' %}selected{% endif %}>
-                Highest citations
+                Highest citations per year
             </option>
         </select>
 
