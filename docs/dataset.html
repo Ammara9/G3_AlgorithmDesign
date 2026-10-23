@@ -1,20 +1,85 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset - G3 Algorithm Design</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Document</title>
 </head>
 <body>
-     {% include 'navigation_bar.html' %}
+
+    {% include 'navigation_bar.html' %}
 
     <main class="container">
+
         <header class="page-header">
-             <p class="page-label">Dataset</p>
-             <h1>The dataset</h1>
-              <p class="page-intro">This page describes the data we use: 50 information science articles published between 2018 and 2020.</p>
-            </header>
+            <p class="page-label">Dataset</p>
+            <h1>The dataset</h1>
+            <p class="page-intro">This page describes the data we use: 50 information science articles published between 2018 and 2020.</p>
+        </header>
+
+        <section class="section">
+            <h2>The dataset at a glance</h2>
+            <ul>
+                <li><strong>Records (papers):</strong> 50 papers</li>
+                <li><strong>Fields per record:</strong> 18</li>
+                <li><strong>Publishers:</strong> 5</li>
+                <li><strong>World regions:</strong> 7</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Where the data comes from</h2>
+            <p>We exported the articles from OpenAlex, a free and open catalogue of scholarly works. We chose English-language journal articles about information science, and kept 10 articles from each of the five publishers.</p>
+        </section>
+
+        <section class="section">
+            <h2>What is in each article</h2>
+            <p>Each article in the XML file has the fields below. These are the ones our algorithm uses.</p>
+            <ul>
+                <li><strong>year:</strong> the year it was published (used for the year filter)</li>
+                <li><strong>topic:</strong> the subject area (used for the topic filter)</li>
+                <li><strong>publisher:</strong> who published it (used to compare publishers)</li>
+                <li><strong>open_access:</strong> true or false (used for the open access filter)</li>
+                <li><strong>citations_per_year:</strong> citations divided by years since publication (used for sorting)</li>
+                <li><strong>keywords:</strong> words that describe the article (used by the search)</li>
+            </ul>
+            <p>Every article also has a title, journal, authors, DOI and a link to read it.</p>
+        </section>
+
+        <section class="section">
+            <h2>How we cleaned the data</h2>
+            <ol>
+                <li>We exported 84 raw records from OpenAlex.</li>
+                <li>We removed records with missing information.</li>
+                <li>We grouped the topics into 13 categories and added citations_per_year.</li>
+                <li>We cut the data to 50 articles, 10 per publisher, to keep the work manageable, and saved it as XML.</li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>An example article</h2>
+            <ul>
+                <li><strong>title:</strong> A Survey on Blockchain for Information Systems Management and Security</li>
+                <li><strong>year:</strong> 2020</li>
+                <li><strong>publisher:</strong> Elsevier</li>
+                <li><strong>topic:</strong> Blockchain</li>
+                <li><strong>open_access:</strong> false</li>
+                <li><strong>citations_per_year:</strong> 96.67</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Why we chose this data</h2>
+            <p>OpenAlex is open, free and well structured. Information science articles from 2018–2020 let us compare five publishers over the same period. We kept the fields the algorithm needs and cut the set to 50 articles to keep the work manageable.</p>
+        </section>
+
     </main>
+
+    <footer class="site-footer">
+        <p>G3 · Introduction to Information Science · University of Borås, 2026</p>
+        <a href="https://github.com/Ammara9/G3_AlgorithmDesign">GitHub repository</a>
+    </footer>
 
 </body>
 </html>
