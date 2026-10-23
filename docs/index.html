@@ -8,21 +8,26 @@
 
     <meta
         name="description"
-        content="An introduction to SmartScholar, Group 3's academic article exploration and algorithm design project."
+        content="Explore academic articles using SmartScholar, Group 3's Algorithm Design project."
     >
 
+    <!-- Nhan's shared stylesheet. -->
     <link
         rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}"
     >
+
+    <!-- Laura's additional search and results stylesheet. -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/search.css') }}"
+    >
 </head>
 
 <body>
-    <!-- Nhan's shared navigation bar. -->
     {% include 'navigation_bar.html' %}
 
     <main>
-        <!-- Main-page introduction. -->
         <header>
             <p>Group 3 · Assignment 2 · Algorithm design</p>
 
@@ -51,212 +56,395 @@
             </p>
         </section>
 
-        <!-- Ammara's search form. -->
-        <section aria-labelledby="search-heading">
-            <h2 id="search-heading">Find academic articles</h2>
+        <!-- Search design: Laura. Search functionality: Ammara. -->
+        <div class="scholar-explorer">
 
-            <p>
-                All fields are optional. Use a keyword, filters, or both.
-            </p>
+            <section class="scholar-search" aria-labelledby="search-heading">
+                <header class="explorer-intro">
+                    <h2 id="search-heading">
+                        Discover the right research for you
+                    </h2>
 
-            <form method="POST" action="/">
-                <p>
-                    <label for="keyword">Search by keyword</label>
-
-                    <input
-                        type="text"
-                        id="keyword"
-                        name="keyword"
-                        placeholder="Search by title, keywords, topic or journal..."
-                        value="{{ request.form.get('keyword', '') }}"
-                    >
-                </p>
-
-                <p>
-                    <label for="topic">Research topic</label>
-
-                    <select id="topic" name="topic">
-                        <option value="">All topics</option>
-
-                        {% for topic in topics %}
-                            <option
-                                value="{{ topic }}"
-                                {% if request.form.get('topic', '') == topic %}selected{% endif %}
-                            >
-                                {{ topic }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </p>
-
-                <p>
-                    <label for="start_year">From year</label>
-
-                    <input
-                        type="number"
-                        id="start_year"
-                        name="start_year"
-                        placeholder="Start year"
-                        value="{{ request.form.get('start_year', '') }}"
-                    >
-                </p>
-
-                <p>
-                    <label for="end_year">To year</label>
-
-                    <input
-                        type="number"
-                        id="end_year"
-                        name="end_year"
-                        placeholder="End year"
-                        value="{{ request.form.get('end_year', '') }}"
-                    >
-                </p>
-
-                <p>
-                    <label for="open_access">Open access</label>
-
-                    <select id="open_access" name="open_access">
-                        <option value="">No preference</option>
-
-                        <option
-                            value="true"
-                            {% if request.form.get('open_access') == 'true' %}selected{% endif %}
-                        >
-                            Open access preferred
-                        </option>
-                    </select>
-                </p>
-
-                <p>
-                    <label for="sort_by">Sort results</label>
-
-                    <select id="sort_by" name="sort_by">
-                        <option value="">Random order</option>
-
-                        <option
-                            value="citations"
-                            {% if request.form.get('sort_by') == 'citations' %}selected{% endif %}
-                        >
-                            Highest citations per year
-                        </option>
-                    </select>
-                </p>
-
-                <button type="submit">Search articles</button>
-            </form>
-        </section>
-
-        <!-- Ammara's search results. -->
-        <section class="results">
-            {% if request.method == 'POST' %}
-                <h2>Search results ({{ articles|length }})</h2>
-
-                {% if articles %}
-                    {% for article in articles %}
-                        <article class="article-card">
-                            <h3>{{ article.findtext('title', '') }}</h3>
-
-                            <p>
-                                <strong>Topic:</strong>
-                                {{ article.findtext('topic', '') }}
-                            </p>
-
-                            <p>
-                                <strong>Year:</strong>
-                                {{ article.findtext('year', '') }}
-                            </p>
-
-                            <p>
-                                <strong>Journal:</strong>
-                                {{ article.findtext('journal', '') }}
-                            </p>
-
-                            <p>
-                                <strong>Publisher:</strong>
-                                {{ article.findtext('publisher', '') }}
-                            </p>
-
-                            <p>
-                                <strong>Keywords:</strong>
-
-                                {% for item in article.findall('keywords/keyword') %}
-                                    {{ item.text }}{% if not loop.last %}, {% endif %}
-                                {% endfor %}
-                            </p>
-
-                            <p>
-                                <strong>Authors:</strong>
-
-                                {% for author in article.findall('name_of_authors/author') %}
-                                    {{ author.text }}{% if not loop.last %}, {% endif %}
-                                {% endfor %}
-                            </p>
-
-                            <p>
-                                <strong>First author country:</strong>
-                                {{ article.findtext('first_author_country', '') }}
-                            </p>
-
-                            <p>
-                                <strong>Region:</strong>
-                                {{ article.findtext('region', '') }}
-                            </p>
-
-                            <p>
-                                <strong>Open access:</strong>
-                                {{ article.findtext('open_access', '') }}
-                            </p>
-
-                            <p>
-                                <strong>Number of authors:</strong>
-                                {{ article.findtext('number_of_authors', '') }}
-                            </p>
-
-                            <p>
-                                <strong>International collaboration:</strong>
-                                {{ article.findtext('international_collaboration', '') }}
-                            </p>
-
-                            <p>
-                                <strong>Citations:</strong>
-                                {{ article.findtext('citation_count', '') }}
-                            </p>
-
-                            <p>
-                                <strong>Citations per year:</strong>
-                                {{ article.findtext('citations_per_year', '') }}
-                            </p>
-
-                            <p>
-                                <strong>DOI:</strong>
-                                {{ article.findtext('doi', '') }}
-                            </p>
-
-                            {% set article_url = article.findtext('url', '') %}
-
-                            {% if article_url %}
-                                <p>
-                                    <a
-                                        href="{{ article_url }}"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Read article
-                                    </a>
-                                </p>
-                            {% endif %}
-                        </article>
-                    {% endfor %}
-                {% else %}
                     <p>
-                        No articles found. Try changing your keyword or filters.
+                        Explore academic articles by topic, publication year
+                        and access, with optional keyword search.
                     </p>
-                {% endif %}
-            {% endif %}
-        </section>
+                </header>
 
-        <!-- Project purpose. -->
+                <form
+                    method="POST"
+                    action="{{ url_for('index') }}"
+                    class="scholar-form"
+                >
+                    <div class="preferences-heading">
+                        <h3>Your preferences</h3>
+
+                        <p>
+                            All fields are optional. Choose the criteria
+                            that matter to you.
+                        </p>
+                    </div>
+
+                    <!-- Keyword search. -->
+                    <div class="scholar-keyword">
+                        <label for="keyword">Search by keyword</label>
+
+                        <input
+                            type="search"
+                            id="keyword"
+                            name="keyword"
+                            placeholder="Search by title, keywords, topic or journal..."
+                            value="{{ request.form.get('keyword', '') }}"
+                        >
+                    </div>
+
+                    <div class="preference-grid">
+
+                        <!-- Python provides all topics from the XML dataset. -->
+                        <div class="preference-field">
+                            <label for="topic">Topic</label>
+
+                            <select id="topic" name="topic">
+                                <option value="">All topics</option>
+
+                                {% for topic in topics %}
+                                    <option
+                                        value="{{ topic }}"
+                                        {% if request.form.get('topic', '') == topic %}
+                                            selected
+                                        {% endif %}
+                                    >
+                                        {{ topic }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Publication years. -->
+                        <fieldset class="preference-field preference-years">
+                            <legend>Year range</legend>
+
+                            <div class="year-fields">
+                                <div>
+                                    <label for="start_year">From</label>
+
+                                    <input
+                                        type="number"
+                                        id="start_year"
+                                        name="start_year"
+                                        placeholder="Any"
+                                        value="{{ request.form.get('start_year', '') }}"
+                                    >
+                                </div>
+
+                                <div>
+                                    <label for="end_year">To</label>
+
+                                    <input
+                                        type="number"
+                                        id="end_year"
+                                        name="end_year"
+                                        placeholder="Any"
+                                        value="{{ request.form.get('end_year', '') }}"
+                                    >
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Open access. -->
+                        <div class="preference-field">
+                            <label for="open_access">Open access</label>
+
+                            <select id="open_access" name="open_access">
+                                <option value="">No preference</option>
+
+                                <option
+                                    value="true"
+                                    {% if request.form.get('open_access') == 'true' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Open access only
+                                </option>
+                            </select>
+                        </div>
+
+                        <!-- Sorting. -->
+                        <div class="preference-field">
+                            <label for="sort_by">Sort results</label>
+
+                            <select id="sort_by" name="sort_by">
+                                <option value="">Random order</option>
+
+                                <option
+                                    value="citations"
+                                    {% if request.form.get('sort_by') == 'citations' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Highest citations per year
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="scholar-actions">
+                        <a
+                            class="scholar-clear"
+                            href="{{ url_for('index') }}"
+                        >
+                            Clear filters
+                        </a>
+
+                        <button type="submit" class="scholar-submit">
+                            Search articles
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Results appear after submitting the form. -->
+            {% if request.method == 'POST' %}
+                <section
+                    class="scholar-results"
+                    aria-labelledby="results-heading"
+                >
+                    <header class="results-heading">
+                        <div>
+                            <h2 id="results-heading">Search results</h2>
+
+                            <p>
+                                {{ articles|length }}
+                                article{% if articles|length != 1 %}s{% endif %}
+                                matching your preferences
+                            </p>
+                        </div>
+
+                        <p class="results-order">
+                            {% if request.form.get('sort_by') == 'citations' %}
+                                Highest citations per year first
+                            {% else %}
+                                Random order
+                            {% endif %}
+                        </p>
+                    </header>
+
+                    {% if articles %}
+                        <ol class="scholar-articles">
+                            {% for article in articles %}
+
+                                {% set authors = article.findall('name_of_authors/author') %}
+                                {% set access = article.findtext('open_access', '')|trim|lower %}
+                                {% set collaboration = article.findtext('international_collaboration', '')|trim|lower %}
+                                {% set article_url = article.findtext('url', '')|trim %}
+
+                                <li>
+                                    <article
+                                        class="scholar-article"
+                                        aria-labelledby="article-title-{{ loop.index }}"
+                                    >
+                                        <div class="article-overview">
+
+                                            <span
+                                                class="article-position"
+                                                aria-label="Result {{ loop.index }}"
+                                            >
+                                                {{ loop.index }}
+                                            </span>
+
+                                            <div class="article-main">
+                                                <h3 id="article-title-{{ loop.index }}">
+                                                    {{ article.findtext('title', '') }}
+                                                </h3>
+
+                                                <p class="article-meta">
+                                                    <span>
+                                                        {{ article.findtext('year', '') }}
+                                                    </span>
+
+                                                    <span>
+                                                        {{ article.findtext('journal', '') }}
+                                                    </span>
+
+                                                    <span>
+                                                        {{ article.findtext('publisher', '') }}
+                                                    </span>
+                                                </p>
+
+                                                <ul
+                                                    class="article-tags"
+                                                    aria-label="Article attributes"
+                                                >
+                                                    <li>
+                                                        {{ article.findtext('topic', '') or 'Topic not specified' }}
+                                                    </li>
+
+                                                    {% if access == 'true' %}
+                                                        <li class="tag-access">
+                                                            Open access
+                                                        </li>
+                                                    {% elif access == 'false' %}
+                                                        <li class="tag-neutral">
+                                                            Restricted access
+                                                        </li>
+                                                    {% else %}
+                                                        <li class="tag-neutral">
+                                                            Access not specified
+                                                        </li>
+                                                    {% endif %}
+
+                                                    {% if collaboration == 'true' %}
+                                                        <li>
+                                                            International collaboration
+                                                        </li>
+                                                    {% endif %}
+                                                </ul>
+
+                                                <p class="article-author">
+                                                    {% if authors %}
+                                                        {{ authors[0].text }}{% if authors|length > 1 %} et al.{% endif %}
+                                                    {% else %}
+                                                        Authors not specified
+                                                    {% endif %}
+                                                </p>
+                                            </div>
+
+                                            <div class="article-metrics">
+                                                <p class="article-rate">
+                                                    <span>Citations per year</span>
+
+                                                    <strong>
+                                                        {{ article.findtext('citations_per_year', '') or 'Not available' }}
+                                                    </strong>
+                                                </p>
+
+                                                <p class="article-total">
+                                                    {{ article.findtext('citation_count', '') or 'Not available' }}
+                                                    total citations
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Expandable information. -->
+                                        <details class="article-details">
+                                            <summary>
+                                                <span class="details-closed">
+                                                    View details
+                                                </span>
+
+                                                <span class="details-open">
+                                                    Hide details
+                                                </span>
+                                            </summary>
+
+                                            <div class="article-details-body">
+                                                <dl class="article-facts">
+                                                    <div>
+                                                        <dt>Authors</dt>
+
+                                                        <dd>
+                                                            {% for author in authors %}
+                                                                {{ author.text }}{% if not loop.last %}, {% endif %}
+                                                            {% else %}
+                                                                Not specified
+                                                            {% endfor %}
+                                                        </dd>
+                                                    </div>
+
+                                                    <div>
+                                                        <dt>Keywords</dt>
+
+                                                        <dd>
+                                                            {% for item in article.findall('keywords/keyword') %}
+                                                                {{ item.text }}{% if not loop.last %}, {% endif %}
+                                                            {% else %}
+                                                                Not specified
+                                                            {% endfor %}
+                                                        </dd>
+                                                    </div>
+
+                                                    <div>
+                                                        <dt>First author country</dt>
+
+                                                        <dd>
+                                                            {{ article.findtext('first_author_country', '') or 'Not specified' }}
+                                                        </dd>
+                                                    </div>
+
+                                                    <div>
+                                                        <dt>Region</dt>
+
+                                                        <dd>
+                                                            {{ article.findtext('region', '') or 'Not specified' }}
+                                                        </dd>
+                                                    </div>
+
+                                                    <div>
+                                                        <dt>Number of authors</dt>
+
+                                                        <dd>
+                                                            {{ article.findtext('number_of_authors', '') or 'Not specified' }}
+                                                        </dd>
+                                                    </div>
+
+                                                    <div>
+                                                        <dt>International collaboration</dt>
+
+                                                        <dd>
+                                                            {% if collaboration == 'true' %}
+                                                                Yes
+                                                            {% elif collaboration == 'false' %}
+                                                                No
+                                                            {% else %}
+                                                                Not specified
+                                                            {% endif %}
+                                                        </dd>
+                                                    </div>
+
+                                                    <div>
+                                                        <dt>DOI</dt>
+
+                                                        <dd>
+                                                            {{ article.findtext('doi', '') or 'Not specified' }}
+                                                        </dd>
+                                                    </div>
+                                                </dl>
+
+                                                {% if article_url %}
+                                                    <a
+                                                        class="scholar-read"
+                                                        href="{{ article_url }}"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        Read article
+
+                                                        <span class="scholar-sr-only">
+                                                            (opens in a new tab)
+                                                        </span>
+                                                    </a>
+                                                {% endif %}
+                                            </div>
+                                        </details>
+                                    </article>
+                                </li>
+                            {% endfor %}
+                        </ol>
+
+                    {% else %}
+                        <div class="scholar-empty">
+                            <h3>No articles found</h3>
+
+                            <p>
+                                Try a different keyword, a wider year range
+                                or fewer filters.
+                            </p>
+                        </div>
+                    {% endif %}
+                </section>
+            {% endif %}
+        </div>
+
         <section aria-labelledby="problem-heading">
             <h2 id="problem-heading">The problem we are exploring</h2>
 
@@ -274,7 +462,6 @@
             </p>
         </section>
 
-        <!-- Dataset overview. -->
         <section aria-labelledby="dataset-heading">
             <h2 id="dataset-heading">Our dataset</h2>
 
@@ -288,7 +475,6 @@
 
             <ul>
                 <li>Article titles, DOIs, journals and publishers.</li>
-
                 <li>Publication years, research topics and keywords.</li>
 
                 <li>
@@ -297,8 +483,7 @@
                 </li>
 
                 <li>
-                    Open-access status, citation counts and
-                    citations per year.
+                    Open-access status, citation counts and citations per year.
                 </li>
             </ul>
 
@@ -308,7 +493,6 @@
             </p>
         </section>
 
-        <!-- Project motivation. -->
         <section aria-labelledby="motivation-heading">
             <h2 id="motivation-heading">Why we chose this project</h2>
 
@@ -327,7 +511,6 @@
             </p>
         </section>
 
-        <!-- Project workflow. -->
         <section aria-labelledby="workflow-heading">
             <h2 id="workflow-heading">How we work</h2>
 
@@ -370,7 +553,6 @@
             </ol>
         </section>
 
-        <!-- Links to the other project pages. -->
         <section aria-labelledby="explore-heading">
             <h2 id="explore-heading">Explore the project</h2>
 
