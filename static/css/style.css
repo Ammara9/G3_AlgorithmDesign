@@ -12,7 +12,6 @@ body {
 /* Colors */
 :root {
   --color-primary: #0f766e;
-  --color-primary-dark: #115e59;
   --color-tint: #f0fdfa;
 
   --color-heading: #0f172a;
@@ -43,60 +42,6 @@ h4 { font-size: 16px; font-weight: 600; line-height: 1.4; }
 .icon {
   width: 20px;
   height: 20px;
-}
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 44px;
-  padding: 0 18px;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s;
-}
-
-/* Main button */
-.btn-primary {
-  background: var(--color-primary);
-  color: #ffffff;
-}
-.btn-primary:hover {
-  background: var(--color-primary-dark);
-}
-
-/* Outline button */
-.btn-secondary {
-  background: var(--color-page);
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-.btn-secondary:hover {
-  background: var(--color-tint);
-}
-
-/* Text-only button */
-.btn-ghost {
-  background: transparent;
-  color: var(--color-primary);
-}
-.btn-ghost:hover {
-  background: var(--color-tint);
-}
-
-/* Disabled */
-.btn:disabled {
-  background: var(--color-surface);
-  color: var(--color-muted);
-  border-color: var(--color-border);
-  cursor: not-allowed;
 }
 
 
@@ -219,17 +164,15 @@ p {
   line-height: 1.6;
 }
 
-/* Text right under the page title */
 @media (max-width: 640px) {
   .container {
     padding: 32px 16px;
   }
 }
-/* Page header: label, heading, description */
-.page-header { max-width: 720px; margin-bottom: 40px; }
 
+/* Small label above the hero heading */
 .page-label {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -237,8 +180,7 @@ p {
   color: var(--color-primary);
 }
 
-.page-header h1 { margin-bottom: 16px; }
-
+/* Hero description */
 .page-intro {
   margin: 0;
   font-size: 18px;
@@ -246,21 +188,24 @@ p {
   color: var(--color-body);
 }
 
-/* Content sections with a divider line */
-.actions { display: flex; gap: 12px; margin-bottom: 40px; }
 
+/* Content sections: a full-width divider line above each one */
 .section {
-  max-width: 720px;
-  padding-top: 32px;
   margin-top: 32px;
+  padding-top: 32px;
   border-top: 1px solid var(--color-border);
+}
+
+/* Text inside a section stays at a readable width */
+.section > * {
+  max-width: 720px;
 }
 
 .section h2 { margin-bottom: 16px; }
 .section ul, .section ol { margin: 0 0 16px; padding-left: 24px; line-height: 1.6; }
 .section li { margin-bottom: 8px; }
 
-/* Code / data box */
+/* Code / data box (pseudocode on the Algorithm page) */
 .code-box {
   margin: 0;
   padding: 16px 20px;
@@ -272,11 +217,13 @@ p {
   line-height: 1.6;
   overflow-x: auto;
 }
-/* Footer */
+
+
+/* Footer: its line matches the content width */
 .site-footer {
-  max-width: 1152px;
+  max-width: 1104px;
   margin: 0 auto;
-  padding: 32px 24px;
+  padding: 32px 0;
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -290,4 +237,65 @@ p {
 
 @media (max-width: 640px) {
   .site-footer { flex-direction: column; }
+}
+
+
+/* Hero: text on the left, illustration on the right */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 760px;
+}
+
+.hero-text.tight {
+  gap: 16px;
+}
+
+.hero-visual {
+  position: relative;
+  flex-shrink: 0;
+  width: 248px;
+  height: 248px;
+  margin-top: -32px;
+}
+
+/* Mint circle behind the illustration */
+.hero-blob {
+  position: absolute;
+  left: -16px;
+  top: 59px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ccf5ec;
+}
+
+.hero-image {
+  position: relative;
+  display: block;
+  width: 248px;
+  height: 248px;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .hero-visual {
+    margin-top: 0;
+  }
+  .hero-text {
+    max-width: none;
+  }
 }
