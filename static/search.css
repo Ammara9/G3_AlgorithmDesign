@@ -14,11 +14,11 @@
     --scholar-border: var(--color-border, #e2e8f0);
 
     box-sizing: border-box;
-    max-width: 1200px;
-    margin: 48px auto;
-    padding: 32px 24px;
-    border-radius: 10px;
-    background: var(--scholar-surface);
+    width: 100%;
+    max-width: none;
+    margin: 32px 0;
+    padding: 32px 0 0;
+    border-top: 1px solid var(--scholar-border);
     color: var(--scholar-text);
     font-family: Inter, Arial, sans-serif;
     font-size: 16px;
@@ -66,7 +66,7 @@
     margin: 0;
     padding: 24px;
     border: 1px solid var(--scholar-border);
-    border-radius: 10px;
+    border-radius: 12px;
     background: var(--scholar-page);
     box-shadow: 0 1px 3px var(--scholar-border);
 }
@@ -115,7 +115,7 @@
     margin: 0;
     padding: 16px;
     border: 1px solid var(--scholar-border);
-    border-radius: 6px;
+    border-radius: 10px;
     background: var(--scholar-surface);
 }
 
@@ -144,7 +144,7 @@
     min-height: 48px;
     padding: 10px 12px;
     border: 1px solid var(--scholar-muted);
-    border-radius: 6px;
+    border-radius: 10px;
     background: var(--scholar-page);
     color: var(--scholar-text);
     font-family: inherit;
@@ -186,7 +186,7 @@
     min-height: 44px;
     padding: 10px 18px;
     border: 1px solid var(--scholar-primary);
-    border-radius: 6px;
+    border-radius: 10px;
     font-family: inherit;
     font-size: 16px;
     font-weight: 600;
@@ -230,7 +230,7 @@
     margin-bottom: 16px;
     padding: 20px 24px;
     border: 1px solid var(--scholar-border);
-    border-radius: 10px;
+    border-radius: 12px;
     background: var(--scholar-page);
 }
 
@@ -515,8 +515,8 @@
 
 @media (max-width: 640px) {
     .scholar-explorer {
-        margin: 32px 0;
-        padding: 24px 16px;
+        margin: 24px 0;
+        padding: 24px 0 0;
     }
 
     .scholar-explorer .scholar-form,
