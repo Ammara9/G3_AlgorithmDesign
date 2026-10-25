@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SmartScholar | G3 Algorithm Design</title>
+    <title>Academic Research Explorer | G3 Algorithm Design</title>
 
     <meta
         name="description"
-        content="Explore academic articles using SmartScholar, Group 3's Algorithm Design project."
+        content="Explore academic articles through Group 3's Algorithm Design project."
     >
 
     <!-- Nhan's shared stylesheet. -->
     <link
         rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    <!-- Laura's homepage styling. -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='home.css') }}"
     >
 
     <!-- Laura's additional search and results stylesheet. -->
@@ -24,35 +30,35 @@
     >
 </head>
 
-<body>
+<body class="home-page">
     {% include 'navigation_bar.html' %}
 
-    <main>
-        <header>
-            <p>Group 3 · Assignment 2 · Algorithm design</p>
+    <main class="container">
+        <header class="page-header">
+            <p class="page-label">Group 3 · Assignment 2 · Algorithm design</p>
 
-            <h1>SmartScholar</h1>
+            <h1>Academic Research Explorer</h1>
 
-            <p>
+            <p class="page-intro">
                 Exploring academic articles through structured data
                 and algorithms.
             </p>
         </header>
 
-        <section aria-labelledby="introduction-heading">
+        <section class="section" aria-labelledby="introduction-heading">
             <h2 id="introduction-heading">About the project</h2>
 
             <p>
-                SmartScholar is our group project for the Algorithm Design
-                assignment. We are developing a way to explore academic
-                articles using their metadata, including topics, publication
-                years, publishers and citations.
+                We are a group of students in the Datalogi course of the
+                Information Science: Digital Environments master programme at
+                the University of Borås, Sweden. This is our project for the
+                Algorithm Design assignment.
             </p>
 
             <p>
-                The project brings together data preparation, XML, Python
-                and a website to explain how an algorithm can help users
-                find articles relevant to their research interests.
+                The project brings together data preparation, XML, Python and
+                a website to explain how an algorithm can help users find
+                articles relevant to their research interests.
             </p>
         </section>
 
@@ -445,7 +451,7 @@
             {% endif %}
         </div>
 
-        <section aria-labelledby="problem-heading">
+        <section class="section" aria-labelledby="problem-heading">
             <h2 id="problem-heading">The problem we are exploring</h2>
 
             <p>
@@ -462,7 +468,7 @@
             </p>
         </section>
 
-        <section aria-labelledby="dataset-heading">
+        <section class="section" aria-labelledby="dataset-heading">
             <h2 id="dataset-heading">Our dataset</h2>
 
             <p>
@@ -493,7 +499,7 @@
             </p>
         </section>
 
-        <section aria-labelledby="motivation-heading">
+        <section class="section" aria-labelledby="motivation-heading">
             <h2 id="motivation-heading">Why we chose this project</h2>
 
             <p>
@@ -511,7 +517,7 @@
             </p>
         </section>
 
-        <section aria-labelledby="workflow-heading">
+        <section class="section" aria-labelledby="workflow-heading">
             <h2 id="workflow-heading">How we work</h2>
 
             <ol>
@@ -553,7 +559,7 @@
             </ol>
         </section>
 
-        <section aria-labelledby="explore-heading">
+        <section class="section" aria-labelledby="explore-heading">
             <h2 id="explore-heading">Explore the project</h2>
 
             <div class="cards">
@@ -599,7 +605,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>Group 3 · Assignment 2 · University of Borås</p>
     </footer>
 </body>
