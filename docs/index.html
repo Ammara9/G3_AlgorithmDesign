@@ -36,56 +36,95 @@
     <main class="container">
         <section class="hero">
             <div class="hero-text tight">
-                <p class="page-label">Group 3 · Assignment 2 · Algorithm design</p>
-                <h1>Academic Research Explorer</h1>
-                <p class="page-intro">
-                    Exploring academic articles through structured data and algorithms.
-                </p>
-            </div>
-            <div class="hero-visual">
-                <img class="hero-image" src="{{ url_for('static', filename='img/hero-home.png') }}" alt="">
-            </div>
-        </section>
+                <p class="page-label">Explore the dataset</p>
+                 <h1>Which publishers get cited most?</h1>
+                   <p class="page-intro">Browse the 50 articles in our dataset. Filter by topic, year and open access, then see which papers stand out by citations.</p>
+             </div>
+             <div class="hero-visual">
+               <img class="hero-image" src="{{ url_for('static', filename='img/hero-home.png') }}" alt="">
+              </div>
+</section>
 
-        <section class="section" aria-labelledby="introduction-heading">
-            <h2 id="introduction-heading">About the project</h2>
+    <h1>SmartScholar</h1>
+    <p>Intelligent Academic Article Recommender</p>
 
-            <p>
-                We are a group of students in the Datalogical course of the
-                Information Science: Digital Environments master programme at
-                the University of Borås, Sweden. This is our project for the
-                Algorithm Design assignment.
-            </p>
+    <form method="POST" action="/">
 
-            <p>
-                The project brings together data preparation, XML, Python and
-                a website to explain how an algorithm can help users find
-                articles relevant to their research interests.
-            </p>
-        </section>
+        <!-- Search bar -->
+        <input
+            type="text"
+            name="keyword"
+            placeholder="Search by title, keywords, topic or journal..."
+            value="{{ request.form.get('keyword', '') }}"
+        >
 
-        <!-- Search design: Laura. Search functionality: Ammara. -->
-        <div class="scholar-explorer">
+        <!-- Filter 1: Topic, loaded from XML -->
+        <select name="topic">
+            <option value="">All Topics</option>
 
-            <section class="scholar-search" aria-labelledby="search-heading">
-                <header class="explorer-intro">
-                    <h2 id="search-heading">
-                        Discover the right research for you
-                    </h2>
+            {% for topic in topics %}
+                <option value="{{ topic }}"
+                    {% if request.form.get('topic', '') == topic %}selected{% endif %}>
+                    {{ topic }}
+                </option>
+            {% endfor %}
+        </select>
 
-                    <p>
-                        Explore academic articles by topic, publication year
-                        and access, with optional keyword search.
-                    </p>
-                </header>
+        <!-- Filter 2: Year range -->
+        <label for="start_year">From year:</label>
+        <input
+            type="number"
+            id="start_year"
+            name="start_year"
+            placeholder="Start year"
+            value="{{ request.form.get('start_year', '') }}"
+        >
 
-                <form
-                    method="POST"
-                    action="{{ url_for('index') }}"
-                    class="scholar-form"
-                >
-                    <div class="preferences-heading">
-                        <h3>Your preferences</h3>
+        <label for="end_year">To year:</label>
+        <input
+            type="number"
+            id="end_year"
+            name="end_year"
+            placeholder="End year"
+            value="{{ request.form.get('end_year', '') }}"
+        >
+
+        <!-- Filter 3: Open access -->
+        <select name="open_access">
+            <option value="">No preference</option>
+            <option value="true"
+                {% if request.form.get('open_access') == 'true' %}selected{% endif %}>
+                Open access preferred
+            </option>
+        </select>
+
+        <!-- Filter 4: Sort -->
+        <select name="sort_by">
+            <option value="">Random order</option>
+            <option value="citations"
+                {% if request.form.get('sort_by') == 'citations' %}selected{% endif %}>
+                Highest citations per year
+            </option>
+        </select>
+
+        <button type="submit">Search Articles</button>
+
+    </form>
+
+    <!-- Search results -->
+    <section class="results">
+
+        {% if request.method == 'POST' %}
+
+            <h2>Search Results ({{ articles|length }})</h2>
+
+            {% if articles %}
+
+                {% for article in articles %}
+
+                    <article class="article-card">
+
+                        <h3>{{ article.findtext('title', '') }}</h3>
 
                         <p>
                             All fields are optional. Choose the criteria
@@ -606,9 +645,9 @@
             </div>
         </section>
     </main>
-
-    <footer class="site-footer">
-        <p>Group 3 · Assignment 2 · University of Borås</p>
+  <footer class="site-footer">
+        <p>G3 · Data Logical Design · University of Borås, 2026</p>
+        <a href="https://github.com/Ammara9/G3_AlgorithmDesign">GitHub repository</a>
     </footer>
 </body>
 </html>

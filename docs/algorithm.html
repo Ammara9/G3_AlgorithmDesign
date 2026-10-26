@@ -1,23 +1,134 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm - G3 Algorithm Design</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Document</title>
 </head>
 <body>
-     {% include 'navigation_bar.html' %}
+
+    {% include 'navigation_bar.html' %}
 
     <main class="container">
-         <header class="page-header">
-             <p class="page-label">Algorithm</p>
-              <h1>How the search works</h1>
-               <p class="page-intro">Our algorithm filters the 50 articles with your choices, then sorts them by citations per year.</p>
-            </header>
+
+        <section class="hero">
+            <div class="hero-text">
+                <p class="page-label">Algorithm</p>
+                <h1>How the search works</h1>
+                <p class="page-intro">Our algorithm filters the 50 articles with your choices, then sorts them by citations per year.</p>
+            </div>
+            <div class="hero-visual">
+                <img class="hero-image" src="{{ url_for('static', filename='img/hero-algorithm.png') }}" alt="">
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>What problem does it solve?</h2>
+            <p>Which publishers' articles are cited most, and does it change with topic, year or open access? The algorithm lets you narrow down the 50 articles and see the most-cited ones first.</p>
+            <ul>
+                <li><strong>Input:</strong> the 50 articles in articles.xml, and your choices (keyword, topic, years, open access, sort order)</li>
+                <li><strong>Process:</strong> check every article against your choices, then sort the ones that match</li>
+                <li><strong>Output:</strong> a list of matching articles</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>How it works, step by step</h2>
+            <ol>
+                <li>Load the 50 articles from articles.xml.</li>
+                <li>Read your choices: keyword, topic, start year, end year, open access and sort order.</li>
+                <li>Go through the articles one by one.</li>
+                <li>Skip an article if it does not match your choices.</li>
+                <li>Keep the articles that match.</li>
+                <li>Sort them by citations per year, highest first, or put them in random order.</li>
+                <li>Show the results.</li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>The code</h2>
+            <p>This is the Python code of our algorithm. It is the same code as src/search_articles.py. The numbers in the comments match the steps above.</p>
+            <pre class="code-box">import random
+from src.read_xml import load_articles
+
+
+def search_articles(keyword="", topic="", start_year="", end_year="",
+                    open_access="", sort_by=""):
+
+    articles = load_articles()          # 1. load the 50 articles
+    results = []                        # empty list for the matches
+
+    keyword = keyword.strip().lower()
+
+    # 3. go through the articles one by one
+    for article in articles:
+        title = article.findtext("title", "").lower()
+        topic_text = article.findtext("topic", "").lower()
+        journal = article.findtext("journal", "").lower()
+        keywords = [
+            item.text.lower()
+            for item in article.findall("keywords/keyword")
+            if item.text
+        ]
+        year = int(article.findtext("year", "0"))
+        access = article.findtext("open_access", "").lower()
+        citations = float(article.findtext("citations_per_year", "0"))
+
+        # 4. skip the article if the keyword is not found
+        if keyword:
+            searchable_text = [title, topic_text, journal] + keywords
+            if not any(keyword in text for text in searchable_text):
+                continue
+
+        # 4. skip the article if it is not the chosen topic
+        if topic and topic_text.strip() != topic.strip().lower():
+            continue
+
+        # 4. skip the article if it is outside the chosen years
+        if start_year and year &lt; int(start_year):
+            continue
+        if end_year and year &gt; int(end_year):
+            continue
+
+        # 4. skip the article if open access is required and it is not
+        if open_access == "true" and access != "true":
+            continue
+
+        # 5. keep the article and its citations
+        results.append((article, citations))
+
+    # 6. sort by citations per year, or shuffle into random order
+    if sort_by == "citations":
+        results.sort(key=lambda item: item[1], reverse=True)
+    else:
+        random.shuffle(results)
+
+    # 7. return the matching articles
+    return [article for article, citations in results]</pre>
+        </section>
+
+        <section class="section">
+            <h2>Variables, selection and iteration</h2>
+            <ul>
+                <li><strong>Variables:</strong> keyword, topic, start_year, end_year, open_access, sort_by and results</li>
+                <li><strong>Selection:</strong> the if checks decide whether an article is kept or skipped</li>
+                <li><strong>Iteration:</strong> the for loop goes through all 50 articles</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Why we designed it this way</h2>
+            <p>Filters are simple to explain and easy to check by hand. We sort by citations per year instead of total citations, because older articles have had more time to be cited, so this compares them more fairly.</p>
+            <p><strong>Limitations:</strong> only 50 articles, and citation counts change over time.</p>
+        </section>
+
     </main>
-  <footer class="site-footer">
-        <p>G3 · Introduction to Information Science · University of Borås, 2026</p>
+
+    <footer class="site-footer">
+        <p>G3 · Data Logical Design · University of Borås, 2026</p>
         <a href="https://github.com/Ammara9/G3_AlgorithmDesign">GitHub repository</a>
     </footer>
+
 </body>
 </html>
