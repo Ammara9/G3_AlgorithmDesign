@@ -1,33 +1,66 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People - G3 Algorithm Design</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Document</title>
 </head>
 <body>
-     {% include 'navigation_bar.html' %}
+
+    {% include 'navigation_bar.html' %}
 
     <main class="container">
-         <header class="page-header">
-             <p class="page-label">People</p>
-               <h1>The team</h1>
-                 <p class="page-intro">Group 3, students in Introduction to Information Science at the University of Borås.</p>
-        </header>
-        <!-- Laura's contribution -->
+
+        <section class="hero">
+            <div class="hero-text">
+                <p class="page-label">People</p>
+                <h1>The team</h1>
+                <p class="page-intro">Group 3, students in Introduction to Information Science at the University of Borås.</p>
+            </div>
+            <div class="hero-visual">
+                <img class="hero-image" src="{{ url_for('static', filename='img/hero-people.png') }}" alt="">
+            </div>
+        </section>
+
         <section class="section">
-    <h2>Laura Laikunaite</h2>
-    <p>
-        Laura styled the homepage in <code>index.html</code>, created the
-        <code>home.css</code> and <code>search.css</code> stylesheets, and styled
-        the search form and article results. She also created the content for the homepage <code>index.html</code> and contributed to publishing
-        the project on GitHub. Laura worked in Visual Studio Code.
-    </p>
-</section>
+            <h2>Team members</h2>
+            <ul>
+                <li><strong>Jayeeta:</strong> data curation. Chose and cleaned the articles and prepared the XML file.</li>
+                <li><strong>Ammara:</strong> algorithm design. Wrote the search algorithm in Python.</li>
+                <li><strong>Thuy Bich Nhan Duong:</strong> website design. Made the Figma wireframes and style guide, and wrote the HTML and CSS.</li>
+                <li><strong>Laura Laik:</strong> wrote the HTML for index.html (the homepage), worked with Ammara to link Python with the front end, and worked with Nhan on the CSS styling.</li>
+            </ul>
+            <p><strong>GitHub:</strong> shared by the whole group.</p>
+        </section>
+
+        <section class="section">
+            <h2>How we worked</h2>
+            <ul>
+                <li><strong>Tools:</strong> GitHub, Figma, Excel and VS Code</li>
+                <li><strong>Workflow:</strong> we work in one shared GitHub repository, use branches and pull requests, and review each other's work.</li>
+            </ul>
+
+            <h3>Meetings and teamwork</h3>
+            <ul>
+                <li><strong>Info session:</strong> we brainstormed the topic, the research question and the problem to solve, and decided who would do what.</li>
+                <li><strong>Next day:</strong> we clarified the questions, divided more work, and agreed that people who work closely together would hold separate meetings.</li>
+                <li><strong>Jayeeta and Ammara:</strong> agreed what Ammara needs to start the algorithm, and what Jayeeta needs to send with the data.</li>
+                <li><strong>Ammara and Laura:</strong> decided what we get from the results and what will be displayed on the index page.</li>
+                <li><strong>Laura and Nhan:</strong> shared the current stage of the styling to avoid double work.</li>
+                <li><strong>Every day:</strong> the group chat kept everyone up to date on changes, pull requests and urgent problems.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Why we divided the work this way</h2>
+            <p>Nhan and Laura are both comfortable with HTML and CSS, so we split the website work. Laura codes the HTML and CSS for the index page (the homepage). Nhan lays out the other pages, which are mostly text.</p>
+            <p>Ammara is more comfortable with back-end work, so she writes the search algorithm in Python.</p>
+            <p>Jayeeta has strong data analysis skills, so she works with the XML files: choosing, cleaning and preparing the articles in articles.xml.</p>
+        </section>
+
     </main>
-  <footer class="site-footer">
-        <p>G3 · Introduction to Information Science · University of Borås, 2026</p>
-        <a href="https://github.com/Ammara9/G3_AlgorithmDesign">GitHub repository</a>
-    </footer>
-</body>
-</html>
+
+    <footer class="site-footer">
+        <p>G3 · Data Logical Design · University of Borås, 2026</p>
+        <a
