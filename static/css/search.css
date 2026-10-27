@@ -1,0 +1,562 @@
+/* SmartScholar search and results.
+   Load after Nhan's style.css.
+   These styles apply only inside .scholar-explorer. */
+
+.scholar-explorer {
+    --scholar-primary: var(--color-primary, #0f766e);
+    --scholar-primary-dark: var(--color-primary-dark, #115e59);
+    --scholar-tint: var(--color-tint, #f0fdfa);
+    --scholar-heading: var(--color-heading, #0f172a);
+    --scholar-text: var(--color-body, #334155);
+    --scholar-muted: var(--color-muted, #64748b);
+    --scholar-page: var(--color-page, #ffffff);
+    --scholar-surface: var(--color-surface, #f8fafc);
+    --scholar-border: var(--color-border, #e2e8f0);
+
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin: 32px 0;
+    padding: 32px 0 0;
+    border-top: 1px solid var(--scholar-border);
+    color: var(--scholar-text);
+    font-family: Inter, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.scholar-explorer * {
+    box-sizing: border-box;
+}
+
+.scholar-explorer h2,
+.scholar-explorer h3 {
+    color: var(--scholar-heading);
+}
+
+/* Search introduction. */
+
+.scholar-explorer .scholar-search {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.scholar-explorer .explorer-intro {
+    margin-bottom: 24px;
+}
+
+.scholar-explorer .explorer-intro h2 {
+    max-width: 30ch;
+    margin: 0 0 12px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.scholar-explorer .explorer-intro p {
+    max-width: 68ch;
+    margin: 0;
+}
+
+/* Preferences panel. */
+
+.scholar-explorer .scholar-form {
+    display: block;
+    margin: 0;
+    padding: 24px;
+    border: 1px solid var(--scholar-border);
+    border-radius: 12px;
+    background: var(--scholar-page);
+    box-shadow: 0 1px 3px var(--scholar-border);
+}
+
+.scholar-explorer .preferences-heading {
+    margin-bottom: 24px;
+}
+
+.scholar-explorer .preferences-heading h3 {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.scholar-explorer .preferences-heading p {
+    margin: 0;
+}
+
+.scholar-explorer .scholar-keyword {
+    margin-bottom: 24px;
+}
+
+.scholar-explorer .scholar-keyword > label,
+.scholar-explorer .preference-field > label,
+.scholar-explorer .preference-years > legend {
+    display: block;
+    margin-bottom: 8px;
+    padding: 0;
+    color: var(--scholar-heading);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* Filter tiles. */
+
+.scholar-explorer .preference-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.15fr 1fr 1.25fr;
+    gap: 16px;
+}
+
+.scholar-explorer .preference-field {
+    min-width: 0;
+    margin: 0;
+    padding: 16px;
+    border: 1px solid var(--scholar-border);
+    border-radius: 10px;
+    background: var(--scholar-surface);
+}
+
+.scholar-explorer .preference-years > legend {
+    float: left;
+    width: 100%;
+}
+
+.scholar-explorer .year-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    clear: both;
+}
+
+.scholar-explorer .year-fields label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.scholar-explorer .scholar-form :is(input, select) {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 10px 12px;
+    border: 1px solid var(--scholar-muted);
+    border-radius: 10px;
+    background: var(--scholar-page);
+    color: var(--scholar-text);
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.scholar-explorer input::placeholder {
+    color: var(--scholar-muted);
+    opacity: 1;
+}
+
+.scholar-explorer select {
+    cursor: pointer;
+}
+
+/* Visible keyboard focus. */
+
+.scholar-explorer :is(input, select, button, a, summary):focus-visible {
+    outline: 3px solid var(--scholar-primary);
+    outline-offset: 3px;
+}
+
+/* Search actions and links. */
+
+.scholar-explorer .scholar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.scholar-explorer :is(.scholar-submit, .scholar-clear, .scholar-read) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 18px;
+    border: 1px solid var(--scholar-primary);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.scholar-explorer .scholar-submit {
+    background: var(--scholar-primary);
+    color: var(--scholar-page);
+}
+
+.scholar-explorer .scholar-submit:hover {
+    border-color: var(--scholar-primary-dark);
+    background: var(--scholar-primary-dark);
+}
+
+.scholar-explorer :is(.scholar-clear, .scholar-read) {
+    background: var(--scholar-page);
+    color: var(--scholar-primary);
+}
+
+.scholar-explorer :is(.scholar-clear, .scholar-read):hover {
+    background: var(--scholar-tint);
+}
+
+/* Results heading. */
+
+.scholar-explorer .scholar-results {
+    margin-top: 24px;
+}
+
+.scholar-explorer .results-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding: 20px 24px;
+    border: 1px solid var(--scholar-border);
+    border-radius: 12px;
+    background: var(--scholar-page);
+}
+
+.scholar-explorer .results-heading h2 {
+    margin: 0 0 4px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.scholar-explorer .results-heading p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.scholar-explorer .results-order {
+    max-width: 28ch;
+}
+
+/* Article list and cards. */
+
+.scholar-explorer .scholar-articles {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.scholar-explorer .scholar-articles > li {
+    min-width: 0;
+}
+
+.scholar-explorer .scholar-article {
+    padding: 24px;
+    border: 1px solid var(--scholar-border);
+    border-radius: 10px;
+    background: var(--scholar-page);
+}
+
+.scholar-explorer .article-overview {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) 168px;
+    align-items: start;
+    gap: 16px;
+}
+
+.scholar-explorer .article-position {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 2px;
+    border-radius: 6px;
+    background: var(--scholar-tint);
+    color: var(--scholar-primary);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+.scholar-explorer .article-main {
+    min-width: 0;
+}
+
+.scholar-explorer .article-main h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+/* Journal, publication year and publisher. */
+
+.scholar-explorer .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.scholar-explorer .article-meta > span {
+    overflow-wrap: anywhere;
+}
+
+.scholar-explorer .article-meta > span + span {
+    padding-left: 12px;
+    border-left: 1px solid var(--scholar-border);
+}
+
+/* Topic, access and collaboration tags. */
+
+.scholar-explorer .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.scholar-explorer .article-tags li {
+    max-width: 100%;
+    padding: 3px 8px;
+    border: 1px solid var(--scholar-border);
+    border-radius: 6px;
+    background: var(--scholar-tint);
+    color: var(--scholar-primary-dark);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.scholar-explorer .article-tags .tag-neutral {
+    background: var(--scholar-surface);
+    color: var(--scholar-text);
+}
+
+.scholar-explorer .article-author {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Citation information. */
+
+.scholar-explorer .article-metrics {
+    min-width: 0;
+}
+
+.scholar-explorer .article-rate {
+    margin: 0;
+    padding: 12px;
+    border-radius: 6px;
+    background: var(--scholar-tint);
+    color: var(--scholar-primary-dark);
+}
+
+.scholar-explorer .article-rate span {
+    display: block;
+    font-size: 14px;
+}
+
+.scholar-explorer .article-rate strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+.scholar-explorer .article-total {
+    margin: 8px 0 0;
+    font-size: 14px;
+}
+
+/* Expandable article details. */
+
+.scholar-explorer .article-details {
+    margin-top: 16px;
+}
+
+.scholar-explorer .article-details > summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 168px;
+    max-width: 100%;
+    min-height: 44px;
+    margin-left: auto;
+    padding: 10px 16px;
+    border: 1px solid var(--scholar-primary);
+    border-radius: 6px;
+    background: var(--scholar-primary);
+    color: var(--scholar-page);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    list-style: none;
+    cursor: pointer;
+}
+
+.scholar-explorer .article-details > summary::-webkit-details-marker {
+    display: none;
+}
+
+.scholar-explorer .article-details > summary:hover {
+    background: var(--scholar-primary-dark);
+}
+
+.scholar-explorer .details-open {
+    display: none;
+}
+
+.scholar-explorer .article-details[open] .details-closed {
+    display: none;
+}
+
+.scholar-explorer .article-details[open] .details-open {
+    display: inline;
+}
+
+.scholar-explorer .article-details-body {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--scholar-border);
+}
+
+.scholar-explorer .article-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 24px;
+    margin: 0 0 24px;
+}
+
+.scholar-explorer .article-facts > div {
+    min-width: 0;
+}
+
+.scholar-explorer .article-facts > div:first-child,
+.scholar-explorer .article-facts > div:nth-child(2),
+.scholar-explorer .article-facts > div:last-child {
+    grid-column: 1 / -1;
+}
+
+.scholar-explorer .article-facts dt {
+    color: var(--scholar-heading);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.scholar-explorer .article-facts dd {
+    margin: 4px 0 0;
+    overflow-wrap: anywhere;
+}
+
+/* Empty search results. */
+
+.scholar-explorer .scholar-empty {
+    padding: 32px 24px;
+    border: 1px solid var(--scholar-border);
+    border-radius: 10px;
+    background: var(--scholar-page);
+}
+
+.scholar-explorer .scholar-empty h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+
+.scholar-explorer .scholar-empty p {
+    max-width: 68ch;
+    margin: 0;
+}
+
+/* Text available to screen readers. */
+
+.scholar-explorer .scholar-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Tablet layout. */
+
+@media (max-width: 1100px) {
+    .scholar-explorer .preference-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Phone layout. */
+
+@media (max-width: 640px) {
+    .scholar-explorer {
+        margin: 24px 0;
+        padding: 24px 0 0;
+    }
+
+    .scholar-explorer .scholar-form,
+    .scholar-explorer .scholar-article,
+    .scholar-explorer .results-heading {
+        padding: 16px;
+    }
+
+    .scholar-explorer .preference-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .scholar-explorer .scholar-actions {
+        align-items: stretch;
+        flex-direction: column-reverse;
+    }
+
+    .scholar-explorer .article-overview {
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .scholar-explorer .article-position {
+        min-width: 28px;
+        min-height: 28px;
+    }
+
+    .scholar-explorer .article-metrics {
+        grid-column: 2;
+    }
+
+    .scholar-explorer .article-rate {
+        max-width: 240px;
+    }
+
+    .scholar-explorer .article-details > summary {
+        width: 100%;
+    }
+
+    .scholar-explorer .article-facts {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
