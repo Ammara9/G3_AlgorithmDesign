@@ -16,7 +16,7 @@
             <div class="hero-text">
                 <p class="page-label">People</p>
                 <h1>The team</h1>
-                <p class="page-intro">Group 3, students in Introduction to Information Science at the University of Borås.</p>
+                <p class="page-intro">Group 3, students in Datalogical Thinking at the University of Borås.</p>
             </div>
             <div class="hero-visual">
                 <img class="hero-image" src="{{ url_for('static', filename='img/hero-people.png') }}" alt="">
@@ -25,42 +25,106 @@
 
         <section class="section">
             <h2>Team members</h2>
-            <ul>
-                <li><strong>Jayeeta:</strong> data curation. Chose and cleaned the articles and prepared the XML file.</li>
-                <li><strong>Ammara:</strong> algorithm design. Wrote the search algorithm in Python.</li>
-                <li><strong>Thuy Bich Nhan Duong:</strong> website design. Made the Figma wireframes and style guide, and wrote the HTML and CSS.</li>
-                <li><strong>Laura Laik:</strong> wrote the HTML for index.html (the homepage), worked with Ammara to link Python with the front end, and worked with Nhan on the CSS styling.</li>
-            </ul>
-            <p><strong>GitHub:</strong> shared by the whole group.</p>
+
+            <article class="person">
+                <aside class="person-card">
+                    <img class="avatar" src="{{ url_for('static', filename='img/avatar-ammara.png') }}" alt="Ammara Shakeel">
+                    <h3>Ammara Shakeel</h3>
+                    <p class="role">Architect and algorithm design</p>
+                </aside>
+                <div class="person-body">
+                    <p>Ammara is the architect of the project. On 19 October she created the GitHub repository, invited the group to it and set up the folder structure. On 21 October she wrote the search algorithm, which combines a keyword search with four optional filters.</p>
+                    <p>On 26 October she fixed a duplicated loop that stopped the articles from rendering, and added the written algorithm design to the algorithm page.</p>
+                    <h4>Responsibilities</h4>
+                    <ul>
+                        <li>The Python search algorithm</li>
+                        <li>The architecture and folder structure</li>
+                        <li>The written algorithm page</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="person">
+                <aside class="person-card">
+                    <img class="avatar" src="{{ url_for('static', filename='img/avatar-jayeeta.png') }}" alt="Jayeeta Roy">
+                    <h3>Jayeeta Roy</h3>
+                    <p class="role">Data curation</p>
+                </aside>
+                <div class="person-body">
+                    <p>Jayeeta chose OpenAlex as the source and took a random sample of 100 articles from five publishers. She cleaned the sample to 84 articles and kept 50, ten from each publisher. She then converted the data to XML and handed it over to Ammara on 21 October.</p>
+                    <p>She also wrote the text of the dataset page, which explains the choice of data, the citation counts and how we calculated citations per year.</p>
+                    <h4>Responsibilities</h4>
+                    <ul>
+                        <li>The data sampling, cleaning and XML file</li>
+                        <li>The written dataset page</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="person">
+                <aside class="person-card">
+                    <img class="avatar" src="{{ url_for('static', filename='img/avatar-nhan.png') }}" alt="Thuy Bich Nhan Duong (Nhan)">
+                    <h3>Thuy Bich Nhan Duong (Nhan)</h3>
+                    <p class="role">Website design</p>
+                </aside>
+                <div class="person-body">
+                    <p>Nhan set up the Figma style guide with colours, typography, spacing and icons, and drew the wireframes for every page. He designed and built the navigation bar, wrote the CSS for the page layouts, and added the hero sections to all pages.</p>
+                    <p>On 27 October he checked and updated the dataset and algorithm pages so that their styling is consistent.</p>
+                    <h4>Responsibilities</h4>
+                    <ul>
+                        <li>The Figma style guide and wireframes</li>
+                        <li>The navigation bar</li>
+                        <li>The HTML and CSS for all pages except the homepage</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="person">
+                <aside class="person-card">
+                    <img class="avatar" src="{{ url_for('static', filename='img/avatar-laura.png') }}" alt="Laura Laik">
+                    <h3>Laura Laik</h3>
+                    <p class="role">Homepage writing, HTML and CSS</p>
+                </aside>
+                <div class="person-body">
+                    <p>Laura wrote the text of the homepage, including the introduction, project purpose, dataset overview and workflow, and built its HTML and CSS. On 21 October she combined it with Ammara's search form. On 22 October she finished the homepage. On 26 October the group reviewed it in a meeting, and it was cleared of all remaining bugs.</p>
+                    <p>She kept each page separate, so that every team member could work on their own page without editing the same file.</p>
+                    <h4>Responsibilities</h4>
+                    <ul>
+                        <li>The homepage HTML and CSS, with Ammara's content</li>
+                    </ul>
+                </div>
+            </article>
         </section>
 
         <section class="section">
             <h2>How we worked</h2>
+            <p>All four of us wrote the text on this people page.</p>
             <ul>
                 <li><strong>Tools:</strong> GitHub, Figma, Excel and VS Code</li>
-                <li><strong>Workflow:</strong> we work in one shared GitHub repository, use branches and pull requests, and review each other's work.</li>
-            </ul>
-
-            <h3>Meetings and teamwork</h3>
-            <ul>
-                <li><strong>Info session:</strong> we brainstormed the topic, the research question and the problem to solve, and decided who would do what.</li>
-                <li><strong>Next day:</strong> we clarified the questions, divided more work, and agreed that people who work closely together would hold separate meetings.</li>
-                <li><strong>Jayeeta and Ammara:</strong> agreed what Ammara needs to start the algorithm, and what Jayeeta needs to send with the data.</li>
-                <li><strong>Ammara and Laura:</strong> decided what we get from the results and what will be displayed on the index page.</li>
-                <li><strong>Laura and Nhan:</strong> shared the current stage of the styling to avoid double work.</li>
-                <li><strong>Every day:</strong> the group chat kept everyone up to date on changes, pull requests and urgent problems.</li>
+                <li><strong>Workflow:</strong> one shared GitHub repository, with branches and pull requests. Changes to the main branch are reviewed by at least one other member before they are merged.</li>
             </ul>
         </section>
 
         <section class="section">
-            <h2>Why we divided the work this way</h2>
-            <p>Nhan and Laura are both comfortable with HTML and CSS, so we split the website work. Laura codes the HTML and CSS for the index page (the homepage). Nhan lays out the other pages, which are mostly text.</p>
-            <p>Ammara is more comfortable with back-end work, so she writes the search algorithm in Python.</p>
-            <p>Jayeeta has strong data analysis skills, so she works with the XML files: choosing, cleaning and preparing the articles in articles.xml.</p>
+            <h2>Meetings and teamwork</h2>
+            <ul>
+                <li><strong>19 October:</strong> we first discussed the assignment.</li>
+                <li><strong>20 October:</strong> we met on Zoom to agree on individual responsibilities and the initial structure for the data.</li>
+                <li><strong>21 October:</strong> Jayeeta handed the XML dataset over to Ammara.</li>
+                <li><strong>22 October:</strong> Ammara handed the working search functionality over to Laura.</li>
+                <li><strong>23 October:</strong> we met on Zoom to decide on the HTML structure.</li>
+                <li><strong>26 October:</strong> we met to review the latest updates. Ammara fixed a duplicated loop, and we agreed what to update on the index page.</li>
+                <li><strong>28 October:</strong> we have our last meeting to finalise everything before publication.</li>
+                <li><strong>Besides meetings:</strong> the group chat kept everyone up to date on changes, pull requests and urgent problems.</li>
+            </ul>
         </section>
 
     </main>
 
     <footer class="site-footer">
-        <p>G3 · Data Logical Design · University of Borås, 2026</p>
-        <a
+        <p>G3 · Datalogical Thinking · University of Borås, 2026</p>
+        <a href="https://github.com/Ammara9/G3_AlgorithmDesign" target="_blank" rel="noopener">GitHub repository</a>
+    </footer>
+
+</body>
+</html>

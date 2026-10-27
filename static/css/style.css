@@ -299,3 +299,166 @@ p {
     max-width: none;
   }
 }
+
+/* People page: one row per team member (card on the left, text on the right) */
+
+/* The shared .section rule limits children to 720px; people rows need the full width */
+.section > .person {
+  max-width: none;
+}
+
+.person {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 32px;
+  padding: 32px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.section > .person:first-of-type {
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* Card with avatar, name and role */
+.person .person-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: start;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-page);
+  box-shadow: 0 1px 3px var(--color-border);
+}
+
+.person .avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-tint);
+  color: var(--color-primary);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.person .role {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* Text beside the card, at a readable width */
+.person-body {
+  min-width: 0;
+  max-width: 720px;
+}
+
+.person-body h4 {
+  margin: 24px 0 8px;
+}
+
+.person-body ul {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+
+.person-body li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 640px) {
+  .person {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* People page: one row per team member (card on the left, text on the right) */
+
+/* The shared .section rule limits children to 720px; people rows need the full width */
+.section > .person {
+  max-width: none;
+}
+
+.person {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 32px;
+  padding: 32px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.section > .person:first-of-type {
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* Card with avatar, name and role */
+.person .person-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: start;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-page);
+  box-shadow: 0 1px 3px var(--color-border);
+}
+
+/* Photo avatar (cropped to a circle) */
+.person .avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-tint);
+}
+
+.person .role {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* Text beside the card, at a readable width */
+.person-body {
+  min-width: 0;
+  max-width: 720px;
+}
+
+.person-body h4 {
+  margin: 24px 0 8px;
+}
+
+.person-body ul {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+
+.person-body li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 640px) {
+  .person {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
