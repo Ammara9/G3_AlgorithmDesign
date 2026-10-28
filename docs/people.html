@@ -4,11 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>People - G3 Algorithm Design</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 
-    {% include 'navigation_bar.html' %}
+    <!-- Navigation bar -->
+<header class="site-header">
+    <nav class="nav">
+
+        <a class="nav-brand" href="index.html">
+            <img
+                class="icon"
+                src="static/img/icons/academic-cap.svg"
+                alt=""
+            >
+            G3 Algorithm Design
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    <img
+                        class="icon"
+                        src="static/img/icons/home.svg"
+                        alt=""
+                    >
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="dataset.html">
+                    <img
+                        class="icon"
+                        src="static/img/icons/circle-stack.svg"
+                        alt=""
+                    >
+                    Dataset
+                </a>
+            </li>
+
+            <li>
+                <a href="algorithm.html">
+                    <img
+                        class="icon"
+                        src="static/img/icons/code-bracket.svg"
+                        alt=""
+                    >
+                    Algorithm
+                </a>
+            </li>
+
+            <li>
+                <a href="people.html" aria-current="page">
+                    <img
+                        class="icon"
+                        src="static/img/icons/user-group.svg"
+                        alt=""
+                    >
+                    People
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+</header>
 
     <main class="container">
 
@@ -18,8 +79,12 @@
                 <h1>The team</h1>
                 <p class="page-intro">Group 3, students in Datalogical Thinking at the University of Borås.</p>
             </div>
-            <div class="hero-visual">
-                <img class="hero-image" src="{{ url_for('static', filename='img/hero-people.png') }}" alt="">
+           <div class="hero-visual">
+                <img
+                    class="hero-image"
+                    src="static/img/hero-people.png"
+                    alt=""
+                >
             </div>
         </section>
 
@@ -28,7 +93,7 @@
 
             <article class="person">
                 <aside class="person-card">
-                    <img class="avatar" src="{{ url_for('static', filename='img/avatar-ammara.png') }}" alt="Ammara Shakeel">
+                    <img class="avatar" src="static/img/avatar-ammara.png" alt="Ammara Shakeel">
                     <h3>Ammara Shakeel</h3>
                     <p class="role">Architect and algorithm design</p>
                 </aside>
@@ -48,7 +113,7 @@
             </article>
             <article class="person">
                 <aside class="person-card">
-                    <img class="avatar" src="{{ url_for('static', filename='img/avatar-jayeeta.png') }}" alt="Jayeeta Roy">
+                    <img class="avatar" src="static/img/avatar-jayeeta.png" alt="Jayeeta Roy">
                     <h3>Jayeeta Roy</h3>
                     <p class="role">Data curation</p>
                 </aside>
@@ -79,12 +144,13 @@
             </article>
             <article class="person">
                 <aside class="person-card">
-                    <img class="avatar" src="{{ url_for('static', filename='img/avatar-nhan.png') }}" alt="Thuy Bich Nhan Duong (Nhan)">
+                    <img class="avatar" src="static/img/avatar-nhan.png" alt="Thuy Bich Nhan Duong (Nhan)">
                     <h3>Thuy Bich Nhan Duong (Nhan)</h3>
                     <p class="role">Website design</p>
                 </aside>
                 <div class="person-body">
                     <p>Nhan designed the visual style of the website and built much of its structure. She set up the Figma style guide with colours, typography, spacing and icons, and drew the wireframes for every page. She designed and built the navigation bar, wrote the HTML and CSS for the page layouts, and checked the dataset and algorithm pages so that their styling is consistent with the rest of the site. She also checked the content of the people page, added each member's section, and kept everyone's text consistent before replacing it with the final version.</p>
+                    <p>Note: Nhan's GitHub commits and contributions appear under two accounts, Joyl-aka-Meow and nhanduong0501. Both belong to her; she switched accounts partway through the project.</p>
                     <h4>Responsibilities</h4>
                     <ul>
                         <li>Figma style guide with colours, typography, spacing and icons.</li>

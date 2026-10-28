@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm - SmartScholar</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    {% include 'navigation_bar.html' %}
+
+    <main class="container">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-text">
+          <p class="page-label">Algorithm Design</p>
+          <h1>How SmartScholar works</h1>
+          <p class="page-intro">
+            SmartScholar uses keyword searching, optional filters and sorting to
+            help users discover relevant academic articles from our XML dataset.
+          </p>
+        </div>
+        <div class="hero-visual">
+          <img
+            class="hero-image"
+            src="{{ url_for('static', filename='img/hero-algorithm.png') }}"
+            alt="Illustration representing the SmartScholar search algorithm"
+          />
+        </div>
+      </section>
+
+      <!-- Problem and purpose -->
+      <section class="section">
+        <h2>1. What problem does the algorithm solve?</h2>
+
+        <p>
+          Academic datasets can contain many articles with different research
+          topics, publication years, journals and citation patterns. Finding
+          relevant literature can become time-consuming when users have to
+          examine every article individually.
+        </p>
+
+        <p>
+          SmartScholar addresses this problem by allowing users to search and
+          narrow down the dataset according to their research needs. Instead of
+          displaying every article without distinction, the algorithm checks the
+          user's criteria and returns articles that match the selected
+          conditions This approach reflects the role of information systems in
+          organising and analysing data to answer questions and solve problems
+          (Dale & Lewis, 2019).
+        </p>
+
+        <p>
+          The current project uses a dataset of 50 academic articles. The
+          algorithm processes the article metadata and organises matching
+          results according to the user's preferences.
+        </p>
+      </section>
+
+      <!-- Dataset connection -->
+      <section class="section">
+        <h2>2. How the dataset supports the algorithm</h2>
+
+        <p>
+          The algorithm depends on the way information is structured in our XML
+          dataset. Each article contains metadata that the algorithm can access
+          and use when searching or filtering.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Title, keywords and topic:</strong> Used to find articles
+            related to the user's search term and research interests.
+          </li>
+          <li>
+            <strong>Year:</strong> Used to check whether an article falls within
+            the selected publication year range.
+          </li>
+          <li>
+            <strong>Open-access status:</strong> Used to identify articles
+            marked as openly accessible.
+          </li>
+          <li>
+            <strong>Citations per year:</strong> Used to rank articles when the
+            user selects citation-based sorting.
+          </li>
+          <li>
+            <strong>Journal:</strong> Included in keyword searching so users can
+            also find articles through journal names.
+          </li>
+        </ul>
+
+        <p>
+          We chose XML because it allows each article and its metadata to be
+          represented in a structured format. Python can read the XML elements
+          and retrieve the information required by the algorithm. This
+          connection between the data model and the search conditions makes the
+          dataset suitable for our purpose.
+        </p>
+      </section>
+
+      <!-- Search and filters -->
+      <section class="section">
+        <h2>3. Search logic and optional filters</h2>
+
+        <p>
+          The algorithm is designed to make the keyword search and filtering
+          flexible. Users can search with a keyword alone, apply filters without
+          entering a keyword, or combine the keyword with any combination of the
+          available filters.
+        </p>
+
+        <h3>Keyword search</h3>
+        <p>
+          The algorithm searches the article title, topic, journal and
+          individual keywords recorded in the XML dataset. It converts the
+          search input and searchable text to lowercase to make matching less
+          sensitive to differences in capitalisation. A keyword match is found
+          when the user's search term appears within at least one of these
+          fields.
+        </p>
+
+        <h3>Topic filter</h3>
+        <p>
+          When a topic is selected, the algorithm checks the article's topic
+          against the selected value. Articles that do not match the chosen
+          topic are excluded. If no topic is selected, this condition is
+          skipped.
+        </p>
+
+        <h3>Year range filter</h3>
+        <p>
+          The start year and end year are optional. When a start year is
+          provided, articles published before that year are excluded. When an
+          end year is provided, articles published after that year are excluded.
+          If only one year boundary is selected, only that boundary is applied.
+        </p>
+
+        <h3>Open-access filter</h3>
+        <p>
+          When the user selects the open-access preference, the algorithm
+          includes only articles whose open_access field is marked as true. When
+          this preference is not selected, the algorithm does not exclude
+          articles based on their open-access status.
+        </p>
+
+        <h3>Citation sorting</h3>
+        <p>
+          Citation sorting changes the order of the matching articles rather
+          than filtering them out. In the current implementation, the algorithm
+          sorts by citations per year, with the highest value first. If citation
+          sorting is not selected, the matching results are shuffled into random
+          order.
+        </p>
+      </section>
+
+      <!-- Step by step workflow -->
+      <section class="section">
+        <h2>4. How the algorithm works:</h2>
+
+        <ol>
+          <li>
+            <strong>Load the dataset.</strong>
+            Read the academic articles from the XML file using the
+            dataset-loading function.
+          </li>
+          <li>
+            <strong>Receive the search criteria.</strong>
+            Store the keyword, selected topic, year boundaries, open-access
+            preference and sorting choice in variables.
+          </li>
+          <li>
+            <strong>Prepare the search input.</strong>
+            Remove unnecessary whitespace from the keyword and convert it to
+            lowercase.
+          </li>
+          <li>
+            <strong>Iterate through the articles.</strong>
+            Use a loop to examine each article and retrieve the metadata needed
+            for searching and filtering.
+          </li>
+          <li>
+            <strong>Apply the active conditions.</strong>
+            Check the keyword and each selected filter. If an article fails an
+            applicable condition, skip it and continue to the next article.
+          </li>
+          <li>
+            <strong>Collect matching articles.</strong>
+            Add articles that pass all applicable filtering conditions to the
+            results list.
+          </li>
+          <li>
+            <strong>Sort the results.</strong>
+            Sort by citations per year in descending order when citation sorting
+            is selected. Otherwise, shuffle the results randomly.
+          </li>
+          <li>
+            <strong>Return the results.</strong>
+            Return the matching article elements so that the website can display
+            them to the user.
+          </li>
+        </ol>
+
+        <p>
+          This process is repeated for every article in the dataset. An article
+          is included only if it satisfies all the filtering conditions that the
+          user has activated. The algorithm follows a similar principle to database queries, which retrieve records according to specified conditions (Dale & Lewis, 2019) .
+        </p>
+      </section>
+
+      <!-- Example -->
+      <section class="section">
+        <h2>5. Example: combining search criteria</h2>
+
+        <p>
+          Imagine a user wants to find articles about artificial intelligence
+          published between 2022 and 2026, prefers open-access publications and
+          wants to see the most cited articles first.
+        </p>
+
+        <ul>
+          <li><strong>Keyword:</strong> artificial intelligence</li>
+          <li><strong>Topic:</strong> Artificial Intelligence</li>
+          <li><strong>Year range:</strong> 2022–2026</li>
+          <li><strong>Open access:</strong> Required</li>
+          <li><strong>Sorting:</strong> Highest citations per year first</li>
+        </ul>
+
+        <p>
+          The algorithm checks each article against these conditions. An article
+          must match the keyword in one of the searchable fields, match the
+          selected topic, fall within the year range and be marked as open
+          access. Articles that fail any of these active conditions are skipped.
+          The remaining articles are then sorted by citations per year.
+        </p>
+
+        <p>
+          This demonstrates how multiple conditions can work together. The user
+          does not need to apply every filter, and clearing a filter removes
+          that particular restriction from the search.
+        </p>
+      </section>
+
+      <!-- Core concepts -->
+      <section class="section">
+        <h2>6. Variables, selection and iteration</h2>
+
+        <p>
+          These algorithmic concepts are used to demonstrate how variables,
+          iteration, and conditional selection support the systematic processing
+          of a dataset and the identification of academic articles that meet
+          specific search criteria.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Variables:</strong>
+            Variables such as keyword, topic, start_year, end_year, open_access,
+            sort_by and results store the user's input and the articles being
+            processed.
+          </li>
+          <li>
+            <strong>Iteration:</strong>
+            The for loop processes the articles one by one, applying the same
+            search logic to each article.
+          </li>
+          <li>
+            <strong>Selection:</strong>
+            The if statements evaluate the search criteria. The continue
+            statement skips an article when it fails a condition.
+          </li>
+          <li>
+            <strong>Lists:</strong>
+            The results list stores the articles that match the active
+            conditions before they are returned.
+          </li>
+          <li>
+            <strong>Sorting:</strong>
+            The sort method orders matching results by their citation rate,
+            while random.shuffle changes their order when no citation sorting is
+            selected.
+          </li>
+        </ul>
+
+        <p>
+          The filtering conditions use AND logic: when several restrictions are
+          active, an article must satisfy all of them to remain in the results.
+          The keyword and the filters can therefore be combined without
+          requiring users to select every available option.
+        </p>
+      </section>
+
+      <!-- Project file structure -->
+      <section class="section">
+        <h2>File structure and project organisation</h2>
+
+        <p>
+          SmartScholar is organised into separate files and folders, with each
+          file responsible for a specific part of the application. This
+          separation makes the project easier to understand, maintain, test and
+          develop collaboratively. The dataset, data-loading logic, search
+          algorithm, website routes and presentation are kept separate rather
+          than being placed in one large file.
+        </p>
+
+        <h3>What each file and folder does</h3>
+
+        <ul>
+          <li>
+            <strong><code>Data/articles.xml</code> — The dataset.</strong>
+            This file stores the academic article records and their metadata,
+            such as titles, keywords, topics, publication years, journals,
+            open-access status and citation information. It provides the
+            information that the algorithm processes.
+          </li>
+
+          <li>
+            <strong><code>src/read_xml.py</code> — Data loading.</strong>
+            This module reads the XML file and extracts the article elements
+            into a format that the Python application can process. Keeping this
+            task separate means the search algorithm does not need to contain
+            all the XML-reading code itself.
+          </li>
+
+          <li>
+            <strong
+              ><code>src/search_articles.py</code> — Search algorithm.</strong
+            >
+            This module contains the main search logic. It calls
+            <code>load_articles()</code> to obtain the dataset, checks each
+            article against the user's keyword and selected filters, collects
+            matching articles, and sorts or shuffles the results before
+            returning them.
+          </li>
+
+          <li>
+            <strong><code>app.py</code> — Application and routes.</strong>
+            This file creates the Flask application and defines the routes that
+            users visit. It receives form input from the website, calls the
+            search function when needed, and passes the results to the
+            appropriate HTML template using Flask's
+            <code>render_template()</code> function.
+          </li>
+
+          <li>
+            <strong><code>templates/</code> — Website pages.</strong>
+            This folder contains the HTML templates rendered by Flask. The
+            homepage provides the search interface, while the algorithm, dataset
+            and people pages explain the project, its data and the team. The
+            shared navigation bar is included in the relevant templates.
+          </li>
+
+          <li>
+            <strong><code>static/css/style.css</code> — Presentation.</strong>
+            This file controls the website's visual appearance, including
+            layout, spacing, typography and styling. Separating CSS from HTML
+            makes the design easier to maintain and update.
+          </li>
+
+          <li>
+            <strong><code>static/img/</code> — Images.</strong>
+            This folder stores the images used throughout the website, such as
+            the illustration on the algorithm page.
+          </li>
+
+          <li>
+            <strong><code>requirements.txt</code> — Dependencies.</strong>
+            This file lists the Python packages required to run the application,
+            allowing the development environment to be recreated more
+            consistently.
+          </li>
+        </ul>
+
+        <h3>How the files work together</h3>
+
+        <ol>
+          <li>
+            The user opens the website and submits a search through an HTML
+            form.
+          </li>
+          <li>
+            <code>app.py</code> receives the submitted values through the
+            relevant Flask route.
+          </li>
+          <li>
+            The route calls <code>search_articles()</code> in
+            <code>src/search_articles.py</code>, passing the keyword and
+            selected filter values.
+          </li>
+          <li>
+            The search module calls <code>load_articles()</code> from
+            <code>src/read_xml.py</code> to obtain the article records from
+            <code>Data/articles.xml</code>.
+          </li>
+          <li>
+            The search algorithm checks the records, applies the selected
+            conditions and prepares the matching results.
+          </li>
+          <li>
+            The search function returns the matching articles to
+            <code>app.py</code>.
+          </li>
+          <li>
+            Flask passes the results to the HTML template, which displays the
+            articles to the user.
+          </li>
+        </ol>
+
+        <h3>Why we separated the responsibilities</h3>
+
+        <p>
+          This structure follows the principle of separation of concerns: each
+          component has a clear responsibility. The XML file stores the data,
+          the data-loading module reads it, the search module processes it,
+          Flask handles requests and routes, and the templates and CSS present
+          the results.
+        </p>
+
+        <p>
+          This makes the project easier to maintain because a change to one
+          component does not necessarily require rewriting the others. For
+          example, we can improve the search algorithm without redesigning the
+          entire website, or update the website's styling without changing the
+          filtering conditions. It also makes collaboration easier because team
+          members can work on different parts of the project with clearer
+          boundaries.
+        </p>
+      </section>
+
+      <!-- Design motivation -->
+      <section class="section">
+        <h2>8. Why we designed it this way</h2>
+
+        <p>
+          We chose a rule-based search algorithm because our main goal was to
+          make the academic dataset searchable and to demonstrate how an
+          algorithm can process structured information. The conditions are
+          explicit and relatively easy to understand, test and explain.
+        </p>
+
+        <p>
+          Making the filters optional gives users more control over their
+          searches. For example, someone who knows a specific keyword can search
+          directly, while someone exploring a research area can start with a
+          topic or year range.
+        </p>
+
+        <p>
+          We use citations per year for ranking rather than total citation
+          count. Older articles have generally had more time to accumulate
+          citations, so citation rates can provide an additional perspective
+          when comparing articles of different ages. However, citation rates do
+          not completely remove differences between research fields, article
+          types or publication contexts.
+        </p>
+
+        <p>
+          When citation sorting is not selected, the algorithm randomises the
+          matching results. This offers a different ordering of the results,
+          although it does not mean the articles have been ranked by relevance.
+        </p>
+      </section>
+
+      <!-- GitHub collaboration -->
+      <section class="section">
+        <h2>9. Collaboration and version control</h2>
+
+        <p>
+          To support collaborative development, we created a branch protection
+          rule for the <code>main</code> branch in GitHub. The rule requires at
+          least one approving review before a pull request can be merged into
+          the main branch.
+        </p>
+
+        <p>
+          This encourages team members to review each other's changes before
+          they become part of the shared version of the project. Code review can
+          help identify mistakes, improve consistency and reduce the risk of
+          introducing problems into the main branch.
+        </p>
+
+        <p>
+          Branch protection does not automatically prevent every merge conflict.
+          Instead, it supports a more controlled workflow in which changes are
+          reviewed and conflicts can be identified and resolved before merging.
+        </p>
+      </section>
+
+      <!-- Limitations -->
+      <section class="section">
+        <h2>10. Current limitations</h2>
+
+        <ul>
+          <li>
+            <strong>Dataset size:</strong>
+            The current dataset contains 50 articles, so the results cannot
+            represent the entire academic literature.
+          </li>
+          <li>
+            <strong>Keyword matching:</strong>
+            The search uses text matching rather than understanding the meaning
+            or context of a query. It may miss relevant articles that use
+            different terminology.
+          </li>
+          <li>
+            <strong>Citation indicators:</strong>
+            Citation rates can change over time and vary between research
+            fields. They should not be treated as a direct measure of research
+            quality.
+          </li>
+          <li>
+            <strong>Random ordering:</strong>
+            Results may appear in a different order when citation sorting is not
+            selected. Random order does not indicate which articles are most
+            relevant.
+          </li>
+          <li>
+            <strong>Data quality:</strong>
+            The accuracy of the results depends on the completeness, consistency
+            and correctness of the article metadata.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Future improvements -->
+      <section class="section">
+        <h2>11. Future improvements: analysing research trends</h2>
+
+        <p>
+          In the future, SmartScholar could be extended beyond searching
+          individual articles to provide an overview of the dataset on the
+          homepage. This would help users understand patterns in the collected
+          data and explore how research activity changes over time.
+        </p>
+
+        <h3>Statistical overview of the dataset</h3>
+
+        <p>
+          The homepage could display charts showing the number of articles
+          associated with each research topic, publication activity by year and
+          the proportion of open-access articles. These visualisations would
+          help users understand the composition of the dataset without having to
+          search through each article individually.
+        </p>
+
+        <h3>Identifying emerging research topics</h3>
+
+        <p>
+          By counting the number of articles published on each topic per year,
+          the system could identify topics with increasing publication activity.
+          Calculating percentage changes or comparing publication trends over
+          several years could help users identify areas that may deserve further
+          investigation.
+        </p>
+
+        <p>
+          Such patterns could indicate growing research activity, but they would
+          not necessarily prove that a topic is becoming more popular among all
+          researchers. The results would depend on the coverage and quality of
+          the dataset.
+        </p>
+
+        <h3>Comparing citation patterns and publishers</h3>
+
+        <p>
+          Another improvement could be to compare citation rates, publication
+          volumes and open-access proportions across journals or publishers.
+          These comparisons could help users explore how publication patterns
+          differ across the dataset.
+        </p>
+
+        <p>
+          However, a publisher or journal should not automatically be considered
+          more trustworthy because it has more citations. Assessing
+          trustworthiness would require additional evidence, such as peer-review
+          practices, editorial standards, transparency and publication policies.
+        </p>
+
+        <h3>A more advanced recommendation algorithm</h3>
+
+        <p>
+          In a later version, SmartScholar could calculate a recommendation
+          score for each article. The score could combine several factors, such
+          as keyword relevance, topic similarity, publication recency and
+          citation indicators. Articles with higher scores could then appear
+          first.
+        </p>
+
+        <p>
+          This would introduce a more advanced ranking method while keeping the
+          system explainable. The weights assigned to each factor would need to
+          be tested and justified, because different research needs may require
+          different priorities.
+        </p>
+
+        <h3>How mathematics could support these improvements</h3>
+
+        <ul>
+          <li>
+            <strong>Frequency and percentages:</strong>
+            Count articles by topic, year, journal or open-access status to
+            describe the dataset.
+          </li>
+          <li>
+            <strong>Growth rates:</strong>
+            Compare publication counts across years to identify changes in
+            research activity.
+          </li>
+          <li>
+            <strong>Statistical comparisons:</strong>
+            Examine citation distributions and publication patterns across
+            different topics and journals.
+          </li>
+          <li>
+            <strong>Weighted scoring:</strong>
+            Combine multiple article characteristics into a score to rank
+            results according to the user's needs.
+          </li>
+        </ul>
+
+        <p>
+          These improvements could develop SmartScholar from a basic search and
+          filtering tool into a data-driven academic discovery system. The
+          existing XML dataset and search algorithm would provide the foundation
+          for these future developments.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>G3 · Datalogical Thinking · University of Borås, 2026</p>
+      <a href="https://github.com/Ammara9/G3_AlgorithmDesign">
+        GitHub repository
+      </a>
+    </footer>
+  </body>
+</html>
