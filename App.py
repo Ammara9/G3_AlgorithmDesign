@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from src.search_articles import search_articles
 from src.read_xml import load_articles
 
-app = Flask(__name__, template_folder="docs")
+app = Flask(__name__, template_folder="templates")
 
 
 @app.route("/", methods=["GET", "POST"])
