@@ -19,6 +19,8 @@
     margin: 32px 0;
     padding: 32px 0 0;
     border-top: 1px solid var(--scholar-border);
+    background: #0D9488;
+    border-radius: 12px;
     color: var(--scholar-text);
     font-family: Inter, Arial, sans-serif;
     font-size: 16px;
@@ -35,6 +37,11 @@
 }
 
 /* Search introduction. */
+#smartscholar-heading,
+.scholar-explorer > p {
+    color: #ffffff;
+    margin-left: 24px;
+}
 
 .scholar-explorer .scholar-search {
     max-width: none;
@@ -66,8 +73,8 @@
     margin: 0;
     padding: 24px;
     border: 1px solid var(--scholar-border);
-    border-radius: 12px;
-    background: var(--scholar-page);
+    border-radius: 0 0 12px 12px;
+    background: #CCFBF1;
     box-shadow: 0 1px 3px var(--scholar-border);
 }
 
