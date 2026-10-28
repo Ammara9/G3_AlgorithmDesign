@@ -4,12 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dataset - G3 Algorithm Design</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
 
-    {% include 'navigation_bar.html' %}
+    <!-- Navigation bar -->
+<header class="site-header">
+    <nav class="nav">
 
+        <a class="nav-brand" href="index.html">
+            <img
+                class="icon"
+                src="../static/img/icons/academic-cap.svg"
+                alt=""
+            >
+            G3 Algorithm Design
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html" aria-current="page">
+                    <img
+                        class="icon"
+                        src="../static/img/icons/home.svg"
+                        alt=""
+                    >
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="dataset.html">
+                    <img
+                        class="icon"
+                        src="../static/img/icons/circle-stack.svg"
+                        alt=""
+                    >
+                    Dataset
+                </a>
+            </li>
+
+            <li>
+                <a href="algorithm.html">
+                    <img
+                        class="icon"
+                        src="../static/img/icons/code-bracket.svg"
+                        alt=""
+                    >
+                    Algorithm
+                </a>
+            </li>
+
+            <li>
+                <a href="people.html">
+                    <img
+                        class="icon"
+                        src="../static/img/icons/user-group.svg"
+                        alt=""
+                    >
+                    People
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+</header>
     <main class="container">
 
         <section class="hero">
@@ -19,7 +79,11 @@
                 <p class="page-intro">Some research articles are cited hundreds of times. Others are hardly cited at all. To study this difference, we built a dataset of 50 information science articles published between 2018 and 2020.</p>
             </div>
             <div class="hero-visual">
-                <img class="hero-image" src="{{ url_for('static', filename='img/hero-dataset.png') }}" alt="">
+                <img
+                    class="hero-image"
+                    src="../static/img/hero-dataset.png"
+                    alt=""
+                >
             </div>
         </section>
 
