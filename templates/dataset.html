@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset - G3 Algorithm Design</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    {% include 'navigation_bar.html' %}
+
+    <main class="container">
+
+        <section class="hero">
+            <div class="hero-text">
+                <p class="page-label">Dataset</p>
+                <h1>The dataset</h1>
+                <p class="page-intro">Some research articles are cited hundreds of times. Others are hardly cited at all. To study this difference, we built a dataset of 50 information science articles published between 2018 and 2020.</p>
+            </div>
+            <div class="hero-visual">
+                <img class="hero-image" src="{{ url_for('static', filename='img/hero-dataset.png') }}" alt="">
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Our research question</h2>
+            <p>Which characteristics of an article are linked to more citations per year? We divide this main question into five smaller ones.</p>
+            <ol>
+                <li>Do articles from some publishers receive more citations than articles from others?</li>
+                <li>Are some topics cited more than others?</li>
+                <li>Does the world region of the first author make a difference?</li>
+                <li>Are open access articles cited more than articles behind a paywall?</li>
+                <li>Are articles by authors from several countries cited more than articles by authors from one country?</li>
+            </ol>
+            <p>To answer these questions, the data has to describe each article and record how often it has been cited.</p>
+        </section>
+
+        <section class="section">
+            <h2>The dataset at a glance</h2>
+            <p>The 50 articles come from five publishers, with 10 articles from each. The publishers are Elsevier, Springer Nature, Taylor &amp; Francis, Emerald and MDPI. The articles appeared in 46 different journals. By year, 10 articles were published in 2018, 21 in 2019 and 19 in 2020. Their first authors are based in 22 countries in seven world regions. Of the 50 articles, 20 are open access and 30 are not.</p>
+            <p>Each article is described by 16 fields and has its own id. The whole dataset is stored in the file <code>Data/articles.xml</code>.</p>
+        </section>
+
+        <section class="section">
+            <h2>Where the data comes from</h2>
+            <p>Every article in the dataset comes from OpenAlex, a fully open source of data on scholarly works (Priem et al., 2022, p. 1). For each article, OpenAlex records the title, authors, institutions, countries, journal, publisher, topic, open access status and number of citations. We used it without a login or a subscription.</p>
+            <p>We asked OpenAlex for a random sample of journal articles on information systems or on library and information science, published between 2018 and 2020. We took 20 articles from each of the five publishers, which gave 100 records. We retrieved the data on 19 October 2026. All citation counts are as they stood on that day.</p>
+        </section>
+
+        <section class="section">
+            <h2>Why we chose this data</h2>
+            <p>Because OpenAlex is open, anyone can check our data or draw a similar sample. Paid databases such as Web of Science and Scopus would limit this to people with a subscription.</p>
+            <p>Information science is the field of our programme, so we took our articles from it. The five publishers differ in how they publish. Elsevier, Springer Nature, Taylor &amp; Francis and Emerald publish mostly subscription journals, where readers or their libraries pay for access. MDPI publishes only open access journals, which anyone can read for free. This difference lets us compare open and closed publishing.</p>
+            <p>An article published last year has hardly had time to be cited. It cannot be compared fairly with an article published six years ago. For this reason, the sample covers only articles from 2018 to 2020. When we collected the data, each of them had been available for about six years or more.</p>
+            <p>We also took the same number of articles from each publisher. If one publisher supplied half of the articles, its results would dominate the comparison.</p>
+        </section>
+
+        <section class="section">
+            <h2>Why we stored the data as XML</h2>
+            <p>One article in our dataset has a single author. Another has six. The number of keywords varies even more, from two to fourteen. A table with one row per article handles this badly, because a single cell cannot hold a list in a form a program can read.</p>
+            <p>In structured data such as a table, the structure is decided before the data is collected, and this can make it inflexible (Dillen, 2026a, Slide 30). A relational database would need a separate table for the authors, linked to the articles by a key (Dillen, 2026a, Slide 24).</p>
+            <p>XML takes a different approach. It follows the model of semistructured data (Abiteboul et al., 2000, p. 7), which accepts missing data and repeated fields (Abiteboul et al., 2000, p. 12). In XML, repeated elements with the same tag represent a collection (Abiteboul et al., 2000, p. 29). Each article in our file can therefore hold as many author and keyword elements as it needs, without a second table.</p>
+            <p>XML is also plain text with a simple syntax that both people and machines can read (Abiteboul et al., 2000, p. 1). It does not depend on any one program, which supports interoperability (Dillen, n.d., Slide 8).</p>
+            <p>Our file is well formed, which means that applications can read it (Dillen, 2026b, Slide 31). It is also consistent, since each tag describes only one thing and each thing has only one tag (Dillen, 2026b, Slide 32). It is not valid in the strict sense used in the course, because we did not write an XML Schema for it (Dillen, 2026b, Slide 33). A schema would be the next step if others were to reuse the data.</p>
+        </section>
+
+        <section class="section">
+            <h2>What is in each article</h2>
+            <p>Each article in the XML file has the 16 fields below.</p>
+            <ul>
+                <li><strong>title</strong> gives the title of the article and is used by the search.</li>
+                <li><strong>keywords</strong> lists words from OpenAlex that describe the article and is also used by the search.</li>
+                <li><strong>doi</strong> gives the Digital Object Identifier, a unique id for the article.</li>
+                <li><strong>url</strong> gives a link that opens the article.</li>
+                <li><strong>year</strong> gives the year of publication and is used by the year filter.</li>
+                <li><strong>journal</strong> names the journal that published the article.</li>
+                <li><strong>publisher</strong> names the publisher and is used to compare publishers.</li>
+                <li><strong>topic</strong> places the article in one of 13 subject areas and is used by the topic filter.</li>
+                <li><strong>first_author_country</strong> names the country of the first author's institution.</li>
+                <li><strong>region</strong> names the world region of that country and is used to compare regions.</li>
+                <li><strong>open_access</strong> is true if the article is free to read and false if it is not. It is used by the open access filter.</li>
+                <li><strong>number_of_authors</strong> gives the number of authors.</li>
+                <li><strong>name_of_authors</strong> lists the full name of every author.</li>
+                <li><strong>international_collaboration</strong> is true if the authors come from more than one country.</li>
+                <li><strong>citation_count</strong> gives the number of times the article has been cited.</li>
+                <li><strong>citations_per_year</strong> gives the citation count divided by the years since publication and is used for sorting.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>How we cleaned the data</h2>
+            <p>We started with 100 records from OpenAlex, 20 from each publisher. Sixteen records were removed. Three articles had been retracted. Three were not written in English. Ten had no author country, and most of these were short magazine news items rather than research articles. This left 84 articles.</p>
+            <p>OpenAlex gave these articles around 40 detailed topic labels. We grouped them into 13 broader topics, so that each topic holds several articles. One article on data breaches carried the label "Thoreau and American Literature", and we corrected it by hand.</p>
+            <p>We then added country names, world regions, international collaboration and citations per year. We also fetched the full author lists and keywords from OpenAlex. From the 84 articles, we drew 10 at random from each publisher. This gave 50 articles and equal weight to every publisher. We converted them to XML and checked that the file is well formed.</p>
+            <p>The raw and the cleaned data are both kept in the <code>Data</code> folder, so each step can be checked.</p>
+        </section>
+
+        <section class="section">
+            <h2>Why we use the citation count</h2>
+            <p>When researchers draw on an earlier study, they cite it in their own article. Each citation shows that the study has been used in later research. Counts of citations are increasingly used to judge the performance of research, both in research policy and within the research system itself (Aksnes et al., 2019, p. 1).</p>
+            <p>Researchers do not cite for one reason only. In one view, the norms of science oblige them to cite the work they build on, and so give credit to others. In another, citing is mainly a way to persuade readers (Aksnes et al., 2019, p. 5). A citation count therefore shows how much an article has been used. It does not show whether the article is original, sound or useful to society (Aksnes et al., 2019, p. 12).</p>
+            <p>This is why we use citations to measure mileage, not quality. A highly cited article in our data has been used by many researchers, but it is not necessarily better than the others.</p>
+            <p>In our data, half of the 50 articles have fewer than 3 citations per year, and three have never been cited. The most cited article has almost 97 citations per year. This uneven spread is typical. Most articles are cited only a few times, while a small number are cited very often (Aksnes et al., 2019, p. 3).</p>
+        </section>
+
+        <section class="section">
+            <h2>Why we use citations per year</h2>
+            <p>Take two articles with 60 citations each. One was published in 2018 and the other in 2020. The newer article reached the same number in 6 years instead of 8, so it has been used more quickly. Raw citation counts hide this difference and favour older articles. It is therefore standard practice to adjust citation measures for publication year (Aksnes et al., 2019, p. 3).</p>
+            <p>We made this adjustment by dividing the citation count by the number of years since publication.</p>
+            <pre class="code-box" style="margin-bottom: 16px;">citations_per_year = citation_count / (2026 - year)</pre>
+            <p>We collected the data in 2026. An article from 2018 has therefore had 8 years to collect citations, an article from 2019 has had 7 and an article from 2020 has had 6. The two articles above score 60 / 8 = 7.5 and 60 / 6 = 10 citations per year. The newer article now ranks higher, as it should. Results are rounded to two decimals.</p>
+            <p>The adjustment is simple, and it has limits. It assumes that citations arrive evenly over the years, although most articles are cited more in some years than in others. It also ignores differences between fields. Our articles all belong to information science in a broad sense, but citation habits may still differ between its topics, for example between blockchain and library services.</p>
+        </section>
+
+        <section class="section">
+            <h2>An example article</h2>
+            <p>The box below shows one article as it is stored in the XML file. Its keyword and author lists are shortened here.</p>
+<pre class="code-box" style="margin-bottom: 16px;">&lt;article id="A006"&gt;
+    &lt;title&gt;A Survey on Blockchain for Information Systems Management and Security&lt;/title&gt;
+    &lt;keywords&gt;
+        &lt;keyword&gt;blockchain&lt;/keyword&gt;
+        &lt;keyword&gt;information systems management&lt;/keyword&gt;
+    &lt;/keywords&gt;
+    &lt;doi&gt;10.1016/j.ipm.2020.102397&lt;/doi&gt;
+    &lt;url&gt;https://doi.org/10.1016/j.ipm.2020.102397&lt;/url&gt;
+    &lt;year&gt;2020&lt;/year&gt;
+    &lt;journal&gt;Information Processing &amp;amp; Management&lt;/journal&gt;
+    &lt;publisher&gt;Elsevier&lt;/publisher&gt;
+    &lt;topic&gt;Blockchain&lt;/topic&gt;
+    &lt;first_author_country&gt;United States&lt;/first_author_country&gt;
+    &lt;region&gt;North America&lt;/region&gt;
+    &lt;open_access&gt;false&lt;/open_access&gt;
+    &lt;number_of_authors&gt;5&lt;/number_of_authors&gt;
+    &lt;name_of_authors&gt;
+        &lt;author&gt;David Berdik&lt;/author&gt;
+        &lt;author&gt;Safa Otoum&lt;/author&gt;
+    &lt;/name_of_authors&gt;
+    &lt;international_collaboration&gt;true&lt;/international_collaboration&gt;
+    &lt;citation_count&gt;580&lt;/citation_count&gt;
+    &lt;citations_per_year&gt;96.67&lt;/citations_per_year&gt;
+&lt;/article&gt;</pre>
+            <p>The article was published in 2020 and has 580 citations, which gives 580 / 6 = 96.67 citations per year. It is the most cited article in the dataset. The second most cited is also an Elsevier article on blockchain, with 80.5 citations per year. Together, these two articles lift the Elsevier average to 21 citations per year, while the Elsevier median is under 5. For the other four publishers, the average lies between 3 and 7.</p>
+            <p>A few articles can change the picture for a whole group. The median is therefore a useful check on the average.</p>
+        </section>
+
+        <section class="section">
+            <h2>Limitations</h2>
+            <p>Fifty articles are enough to describe this sample, but not to show that one publisher or country is cited more in general. The citation counts come from OpenAlex, and another database such as Scopus may count a different number for the same article.</p>
+            <p>We also recorded only the first author's country. An article by authors in Sweden and India therefore counts as Swedish if the first author works in Sweden. The international_collaboration field shows only that more than one country was involved.</p>
+        </section>
+
+        <section class="section">
+            <h2>References</h2>
+            <p>Abiteboul, S., Buneman, P., &amp; Suciu, D. (2000). <em>Data on the Web: From relations to semistructured data and XML</em>. Morgan Kaufmann.</p>
+            <p>Aksnes, D. W., Langfeldt, L., &amp; Wouters, P. (2019). Citations, citation indicators, and research quality: An overview of basic concepts and theories. <em>SAGE Open, 9</em>(1). <a href="https://doi.org/10.1177/2158244019829575">https://doi.org/10.1177/2158244019829575</a></p>
+            <p>Dillen, W. (n.d.). <em>A quick introduction to data formats</em> [Lecture slides]. Datalogical Thinking, University of Borås.</p>
+            <p>Dillen, W. (2026a). <em>Text as structured data: Relational databases</em> [Lecture slides]. Datalogical Thinking, University of Borås.</p>
+            <p>Dillen, W. (2026b). <em>Text as semi-structured data: Markup and XML</em> [Lecture slides]. Datalogical Thinking, University of Borås.</p>
+            <p>Priem, J., Piwowar, H., &amp; Orr, R. (2022). <em>OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts</em>. arXiv. <a href="https://doi.org/10.48550/arXiv.2205.01833">https://doi.org/10.48550/arXiv.2205.01833</a></p>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>G3 · Datalogical Thinking · University of Borås, 2026</p>
+        <a href="https://github.com/Ammara9/G3_AlgorithmDesign">GitHub repository</a>
+    </footer>
+
+</body>
+</html>

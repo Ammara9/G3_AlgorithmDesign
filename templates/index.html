@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academic Research Explorer | G3 Algorithm Design</title>
+
+    <meta
+        name="description"
+        content="Explore academic articles through Group 3's Algorithm Design project."
+    >
+
+    <!-- Nhan's shared stylesheet. -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    <!-- Laura's homepage styling. -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/home.css') }}"
+    >
+
+    <!-- Laura's additional search and results stylesheet. -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/search.css') }}"
+    >
+</head>
+
+<body class="home-page">
+
+    {% include 'navigation_bar.html' %}
+
+    <main class="container">
+
+        <!-- Hero section -->
+        <section class="hero">
+            <div class="hero-text tight">
+                <p class="page-label">Explore the project</p>
+
+                <h1>Explore the Academic Research Explorer</h1>
+
+                <p class="page-intro">
+                   We are a group of students on the Master’s Programme
+                    in Information Science: Digital Environments at the University of Borås in Sweden.
+                    Together, we are developing Academic Research Explorer, a website designed to help
+                     users find and explore academic articles.
+                </p>
+            </div>
+
+            <div class="hero-visual">
+                <img
+                    class="hero-image"
+                    src="{{ url_for('static', filename='img/hero-home.png') }}"
+                    alt=""
+                >
+            </div>
+        </section>
+
+        <!-- SmartScholar search -->
+        <section class="scholar-explorer" aria-labelledby="smartscholar-heading">
+
+            <h2 id="smartscholar-heading">SmartScholar</h2>
+
+            <p>Intelligent Academic Article Recommender</p>
+
+            <form class="scholar-form" method="POST" action="{{ url_for('index') }}">
+
+                <p>
+                    All fields are optional. Choose the criteria
+                    that matter to you.
+                </p>
+
+                <!-- Keyword search -->
+                <div class="scholar-keyword">
+                    <label for="keyword">Search by keyword</label>
+
+                    <input
+                        type="search"
+                        id="keyword"
+                        name="keyword"
+                        placeholder="Search by title, keywords, topic or journal..."
+                        value="{{ request.form.get('keyword', '') }}"
+                    >
+                </div>
+
+                <div class="preference-grid">
+
+                    <!-- Topic: loaded from the XML dataset -->
+                    <div class="preference-field">
+                        <label for="topic">Topic</label>
+
+                        <select id="topic" name="topic">
+                            <option value="">All topics</option>
+
+                            {% for topic in topics %}
+                                <option
+                                    value="{{ topic }}"
+                                    {% if request.form.get('topic', '') == topic %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    {{ topic }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Publication years -->
+                    <fieldset class="preference-field preference-years">
+                        <legend>Year range</legend>
+
+                        <div class="year-fields">
+                            <div>
+                                <label for="start_year">From</label>
+
+                                <input
+                                    type="number"
+                                    id="start_year"
+                                    name="start_year"
+                                    placeholder="Any"
+                                    value="{{ request.form.get('start_year', '') }}"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="end_year">To</label>
+
+                                <input
+                                    type="number"
+                                    id="end_year"
+                                    name="end_year"
+                                    placeholder="Any"
+                                    value="{{ request.form.get('end_year', '') }}"
+                                >
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Open access -->
+                    <div class="preference-field">
+                        <label for="open_access">Open access</label>
+
+                        <select id="open_access" name="open_access">
+                            <option value="">No preference</option>
+
+                            <option
+                                value="true"
+                                {% if request.form.get('open_access') == 'true' %}
+                                    selected
+                                {% endif %}
+                            >
+                                Open access only
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Sorting -->
+                    <div class="preference-field">
+                        <label for="sort_by">Sort results</label>
+
+                        <select id="sort_by" name="sort_by">
+                            <option
+                                value=""
+                                {% if request.form.get('sort_by', '') != 'citations' %}
+                                    selected
+                                {% endif %}
+                            >
+                                Random order
+                            </option>
+
+                            <option
+                                value="citations"
+                                {% if request.form.get('sort_by') == 'citations' %}
+                                    selected
+                                {% endif %}
+                            >
+                                Highest citations per year
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="scholar-actions">
+                    <a
+                        class="scholar-clear"
+                        href="{{ url_for('index') }}"
+                    >
+                        Clear filters
+                    </a>
+
+                    <button type="submit" class="scholar-submit">
+                        Search articles
+                    </button>
+                </div>
+
+            </form>
+      
+
+        <!-- Search results: displayed after submitting the form -->
+        {% if request.method == 'POST' %}
+
+            <section
+                class="scholar-results"
+                aria-labelledby="results-heading"
+            >
+
+                <header class="results-heading">
+                    <div>
+                        <h2 id="results-heading">Search results</h2>
+
+                        <p>
+                            {{ articles|length }}
+                            article{% if articles|length != 1 %}s{% endif %}
+                            matching your preferences
+                        </p>
+                    </div>
+
+                    <p class="results-order">
+                        {% if request.form.get('sort_by') == 'citations' %}
+                            Highest citations per year first
+                        {% else %}
+                            Random order
+                        {% endif %}
+                    </p>
+                </header>
+
+                {% if articles %}
+
+                    <ol class="scholar-articles">
+
+                        {% for article in articles %}
+
+                            {% set authors = article.findall('name_of_authors/author') %}
+                            {% set access = article.findtext('open_access', '')|trim|lower %}
+                            {% set collaboration = article.findtext('international_collaboration', '')|trim|lower %}
+                            {% set article_url = article.findtext('url', '')|trim %}
+
+                            <li>
+                                <article
+                                    class="scholar-article"
+                                    aria-labelledby="article-title-{{ loop.index }}"
+                                >
+
+                                    <div class="article-overview">
+
+                                        <span
+                                            class="article-position"
+                                            aria-label="Result {{ loop.index }}"
+                                        >
+                                            {{ loop.index }}
+                                        </span>
+
+                                        <div class="article-main">
+
+                                            <h3 id="article-title-{{ loop.index }}">
+                                                {{ article.findtext('title', '') }}
+                                            </h3>
+
+                                            <p class="article-meta">
+                                                <span>
+                                                    {{ article.findtext('year', '') }}
+                                                </span>
+
+                                                <span>
+                                                    {{ article.findtext('journal', '') }}
+                                                </span>
+
+                                                <span>
+                                                    {{ article.findtext('publisher', '') }}
+                                                </span>
+                                            </p>
+
+                                            <ul
+                                                class="article-tags"
+                                                aria-label="Article attributes"
+                                            >
+                                                <li>
+                                                    {{ article.findtext('topic', '') or 'Topic not specified' }}
+                                                </li>
+
+                                                {% if access == 'true' %}
+                                                    <li class="tag-access">
+                                                        Open access
+                                                    </li>
+                                                {% elif access == 'false' %}
+                                                    <li class="tag-neutral">
+                                                        Restricted access
+                                                    </li>
+                                                {% else %}
+                                                    <li class="tag-neutral">
+                                                        Access not specified
+                                                    </li>
+                                                {% endif %}
+
+                                                {% if collaboration == 'true' %}
+                                                    <li>
+                                                        International collaboration
+                                                    </li>
+                                                {% endif %}
+                                            </ul>
+
+                                            <p class="article-author">
+                                                {% if authors %}
+                                                    {{ authors[0].text }}{% if authors|length > 1 %} et al.{% endif %}
+                                                {% else %}
+                                                    Authors not specified
+                                                {% endif %}
+                                            </p>
+
+                                        </div>
+
+                                        <div class="article-metrics">
+
+                                            <p class="article-rate">
+                                                <span>Citations per year</span>
+
+                                                <strong>
+                                                    {{ article.findtext('citations_per_year', '') or 'Not available' }}
+                                                </strong>
+                                            </p>
+
+                                            <p class="article-total">
+                                                {{ article.findtext('citation_count', '') or 'Not available' }}
+                                                total citations
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Expandable article information -->
+                                    <details class="article-details">
+
+                                        <summary>
+                                            <span class="details-closed">
+                                                View details
+                                            </span>
+
+                                            <span class="details-open">
+                                                Hide details
+                                            </span>
+                                        </summary>
+
+                                        <div class="article-details-body">
+
+                                            <dl class="article-facts">
+
+                                                <div>
+                                                    <dt>Authors</dt>
+
+                                                    <dd>
+                                                        {% for author in authors %}
+                                                            {{ author.text }}{% if not loop.last %}, {% endif %}
+                                                        {% else %}
+                                                            Not specified
+                                                        {% endfor %}
+                                                    </dd>
+                                                </div>
+
+                                                <div>
+                                                    <dt>Keywords</dt>
+
+                                                    <dd>
+                                                        {% for item in article.findall('keywords/keyword') %}
+                                                            {{ item.text }}{% if not loop.last %}, {% endif %}
+                                                        {% else %}
+                                                            Not specified
+                                                        {% endfor %}
+                                                    </dd>
+                                                </div>
+
+                                                <div>
+                                                    <dt>First author country</dt>
+
+                                                    <dd>
+                                                        {{ article.findtext('first_author_country', '') or 'Not specified' }}
+                                                    </dd>
+                                                </div>
+
+                                                <div>
+                                                    <dt>Region</dt>
+
+                                                    <dd>
+                                                        {{ article.findtext('region', '') or 'Not specified' }}
+                                                    </dd>
+                                                </div>
+
+                                                <div>
+                                                    <dt>Number of authors</dt>
+
+                                                    <dd>
+                                                        {{ article.findtext('number_of_authors', '') or 'Not specified' }}
+                                                    </dd>
+                                                </div>
+
+                                                <div>
+                                                    <dt>International collaboration</dt>
+
+                                                    <dd>
+                                                        {% if collaboration == 'true' %}
+                                                            Yes
+                                                        {% elif collaboration == 'false' %}
+                                                            No
+                                                        {% else %}
+                                                            Not specified
+                                                        {% endif %}
+                                                    </dd>
+                                                </div>
+
+                                                <div>
+                                                    <dt>DOI</dt>
+
+                                                    <dd>
+                                                        {{ article.findtext('doi', '') or 'Not specified' }}
+                                                    </dd>
+                                                </div>
+
+                                            </dl>
+
+                                            {% if article_url %}
+                                                <a
+                                                    class="scholar-read"
+                                                    href="{{ article_url }}"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    Read article
+
+                                                    <span class="scholar-sr-only">
+                                                        (opens in a new tab)
+                                                    </span>
+                                                </a>
+                                            {% endif %}
+
+                                        </div>
+                                    </details>
+
+                                </article>
+                            </li>
+
+                        {% endfor %}
+
+                    </ol>
+
+                {% else %}
+
+                    <div class="scholar-empty">
+                        <h3>No articles found</h3>
+
+                        <p>
+                            Try a different keyword, a wider year range
+                            or fewer filters.
+                        </p>
+                    </div>
+
+                {% endif %}
+
+            </section>
+
+        {% endif %}
+</section>
+        <!-- Project information -->
+        <section class="section" aria-labelledby="problem-heading">
+            <h2 id="problem-heading">The problem we are exploring</h2>
+
+            <p>
+                Academic article records contain many details. Looking
+                through them individually can make it difficult to identify
+                articles that meet several criteria at once.
+            </p>
+
+            <p>
+                Our aim is to make this information easier to explore by
+                combining keyword matching, filtering and sorting. For
+                example, a user may want articles on a particular topic,
+                published within a chosen period, with open access available.
+            </p>
+        </section>
+
+        <section class="section" aria-labelledby="dataset-heading">
+            <h2 id="dataset-heading">Our dataset</h2>
+
+            <p>
+                We chose article metadata from OpenAlex, focusing on
+                information systems and library and information science.
+                The source sample covers publications from 2018 to 2020.
+            </p>
+
+            <p>The dataset describes:</p>
+
+            <ul>
+                <li>Article titles, DOIs, journals and publishers.</li>
+                <li>Publication years, research topics and keywords.</li>
+                <li>
+                    Authors, the first author's country and region,
+                    and international collaboration.
+                </li>
+                <li>
+                    Open-access status, citation counts and citations per year.
+                </li>
+            </ul>
+
+            <p>
+                The records are organised in XML so they can be read and
+                processed consistently by the Python algorithm.
+            </p>
+        </section>
+
+        <section class="section" aria-labelledby="motivation-heading">
+            <h2 id="motivation-heading">Why we chose this project</h2>
+
+            <p>
+                Academic article metadata gives us a practical way to
+                connect the different parts of the assignment. We can
+                examine how data is selected and structured, how an
+                algorithm processes it, and how a website explains the
+                project to its users.
+            </p>
+
+            <p>
+                It also encourages us to consider the limits of the data.
+                For example, citations indicate recorded attention to an
+                article, but do not establish its research quality on their own.
+            </p>
+        </section>
+
+        <section class="section" aria-labelledby="workflow-heading">
+            <h2 id="workflow-heading">How we work</h2>
+
+            <ol class="home-workflow">
+                <li>
+                    <h3>Collect and clean the data</h3>
+
+                    <p>
+                        Select article records, check missing information
+                        and organise the research topics.
+                    </p>
+                </li>
+
+                <li>
+                    <h3>Structure the records</h3>
+
+                    <p>
+                        Use consistent XML fields to describe each article
+                        and make the data ready for processing.
+                    </p>
+                </li>
+
+                <li>
+                    <h3>Design the algorithm</h3>
+
+                    <p>
+                        Develop Python logic for selecting and ordering
+                        articles according to the user's criteria.
+                    </p>
+                </li>
+
+                <li>
+                    <h3>Build the website</h3>
+
+                    <p>
+                        Prepare pages that introduce the project, explain
+                        the dataset and algorithm, and describe the team's work.
+                    </p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section" aria-labelledby="explore-heading">
+            <h2 id="explore-heading">Explore the project</h2>
+
+            <div class="cards">
+
+                <article class="card">
+                    <h3>Dataset</h3>
+
+                    <p>
+                        Learn about the data source, XML structure
+                        and cleaning decisions.
+                    </p>
+
+                    <a href="{{ url_for('dataset') }}">
+                        About the dataset
+                    </a>
+                </article>
+
+                <article class="card">
+                    <h3>Algorithm</h3>
+
+                    <p>
+                        Learn how the Python algorithm applies search
+                        criteria, filters and sorting.
+                    </p>
+
+                    <a href="{{ url_for('algorithm') }}">
+                        About the algorithm
+                    </a>
+                </article>
+
+                <article class="card">
+                    <h3>People</h3>
+
+                    <p>
+                        Meet the team and see how we divided
+                        the project responsibilities.
+                    </p>
+
+                    <a href="{{ url_for('people') }}">
+                        Meet the team
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>G3 · Datalogical Thinking · University of Borås, 2026</p>
+
+        <a href="https://github.com/Ammara9/G3_AlgorithmDesign">
+            GitHub repository
+        </a>
+    </footer>
+
+</body>
+</html>
