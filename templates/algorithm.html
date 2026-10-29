@@ -306,73 +306,62 @@
           than being placed in one large file.
         </p>
 
-        <h3>What each file and folder does</h3>
 
-        <ul>
-          <li>
-            <strong><code>Data/articles.xml</code> — The dataset.</strong>
-            This file stores the academic article records and their metadata,
-            such as titles, keywords, topics, publication years, journals,
-            open-access status and citation information. It provides the
-            information that the algorithm processes.
-          </li>
+<h3>What each file and folder does</h3>
 
-          <li>
-            <strong><code>src/read_xml.py</code> — Data loading.</strong>
-            This module reads the XML file and extracts the article elements
-            into a format that the Python application can process. Keeping this
-            task separate means the search algorithm does not need to contain
-            all the XML-reading code itself.
-          </li>
+<ul>
+  <li>
+    <strong><code>Data/</code> — Dataset.</strong>
+    Contains the raw and cleaned data files. <code>articles.xml</code> stores
+    article metadata, including titles, keywords, topics and citation information.
+  </li>
 
-          <li>
-            <strong
-              ><code>src/search_articles.py</code> — Search algorithm.</strong
-            >
-            This module contains the main search logic. It calls
-            <code>load_articles()</code> to obtain the dataset, checks each
-            article against the user's keyword and selected filters, collects
-            matching articles, and sorts or shuffles the results before
-            returning them.
-          </li>
+  <li>
+    <strong><code>src/read_xml.py</code> — Data loading.</strong>
+    Reads the XML file and extracts article records for the application.
+  </li>
 
-          <li>
-            <strong><code>app.py</code> — Application and routes.</strong>
-            This file creates the Flask application and defines the routes that
-            users visit. It receives form input from the website, calls the
-            search function when needed, and passes the results to the
-            appropriate HTML template using Flask's
-            <code>render_template()</code> function.
-          </li>
+  <li>
+    <strong><code>src/search_articles.py</code> — Search algorithm.</strong>
+    Loads the articles, applies keyword and filter conditions, and sorts or
+    shuffles the matching results.
+  </li>
 
-          <li>
-            <strong><code>templates/</code> — Website pages.</strong>
-            This folder contains the HTML templates rendered by Flask. The
-            homepage provides the search interface, while the algorithm, dataset
-            and people pages explain the project, its data and the team. The
-            shared navigation bar is included in the relevant templates.
-          </li>
+  <li>
+    <strong><code>App.py</code> — Flask application.</strong>
+    Defines website routes, processes search inputs and displays results
+    using HTML templates.
+  </li>
 
-          <li>
-            <strong><code>static/css/style.css</code> — Presentation.</strong>
-            This file controls the website's visual appearance, including
-            layout, spacing, typography and styling. Separating CSS from HTML
-            makes the design easier to maintain and update.
-          </li>
+  <li>
+    <strong><code>templates/</code> — HTML templates.</strong>
+    Contains the homepage and the algorithm, dataset and people pages,
+    including the shared navigation bar.
+  </li>
 
-          <li>
-            <strong><code>static/img/</code> — Images.</strong>
-            This folder stores the images used throughout the website, such as
-            the illustration on the algorithm page.
-          </li>
+  <li>
+    <strong><code>static/css/</code> — Stylesheets.</strong>
+    <code>style.css</code> provides general styling, <code>home.css</code>
+    styles the homepage, and <code>search.css</code> styles the search interface
+    and results.
+  </li>
 
-          <li>
-            <strong><code>requirements.txt</code> — Dependencies.</strong>
-            This file lists the Python packages required to run the application,
-            allowing the development environment to be recreated more
-            consistently.
-          </li>
-        </ul>
+  <li>
+    <strong><code>static/img/</code> — Images.</strong>
+    Stores images and illustrations used on the website.
+  </li>
+
+  <li>
+    <strong><code>requirements.txt</code> — Dependencies.</strong>
+    Lists the Python packages needed to run the application.
+  </li>
+
+  <li>
+    <strong><code>docs/</code> — GitHub Pages website.</strong>
+    Contains the static HTML pages and their CSS and image files.
+    GitHub Pages serves this version, while Render runs the Flask application.
+  </li>
+</ul>
 
         <h3>How the files work together</h3>
 
