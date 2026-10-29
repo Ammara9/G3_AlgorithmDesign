@@ -44,6 +44,7 @@
 .home-page .home-workflow {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+     max-width: 1400px;
     gap: 24px;
     margin: 0;
     padding: 0;
@@ -97,6 +98,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
+     max-width: 1400px;
 }
 
 .home-page > main > section > .cards > .card {
@@ -178,4 +180,43 @@
     .home-page > main > section > .cards > .card {
         padding: 20px;
     }
+}
+/* Important Note */
+.home-page [aria-labelledby="hosting-note-heading"] {
+    box-sizing: border-box;
+    margin-top: 32px;
+    padding: 24px;
+    background: #f0fdfa;
+    border-top: 0;
+    border-left: 4px solid #0f766e;
+    border-radius: 10px;
+}
+
+.home-page [aria-labelledby="hosting-note-heading"] h2 {
+    margin: 0 0 16px;
+    color: #115e59;
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.home-page [aria-labelledby="hosting-note-heading"] p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.home-page [aria-labelledby="hosting-note-heading"] a {
+    color: #0f766e;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    overflow-wrap: anywhere;
+}
+
+.home-page [aria-labelledby="hosting-note-heading"] a:hover {
+    color: #115e59;
+}
+
+.home-page [aria-labelledby="hosting-note-heading"] a:focus-visible {
+    outline: 3px solid #0f766e;
+    outline-offset: 4px;
 }

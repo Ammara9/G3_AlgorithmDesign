@@ -44,6 +44,7 @@
 .home-page .home-workflow {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+     max-width: 1400px;
     gap: 24px;
     margin: 0;
     padding: 0;
@@ -97,6 +98,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
+     max-width: 1400px;
 }
 
 .home-page > main > section > .cards > .card {
