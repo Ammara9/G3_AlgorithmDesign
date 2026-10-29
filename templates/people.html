@@ -10,7 +10,7 @@
 
     {% include 'navigation_bar.html' %}
 
-    <main class="container">
+     <main class="container">
 
         <section class="hero">
             <div class="hero-text">
@@ -18,8 +18,12 @@
                 <h1>The team</h1>
                 <p class="page-intro">Group 3, students in Datalogical Thinking at the University of Borås.</p>
             </div>
-            <div class="hero-visual">
-                <img class="hero-image" src="{{ url_for('static', filename='img/hero-people.png') }}" alt="">
+           <div class="hero-visual">
+                <img
+                    class="hero-image"
+                    src="{{ url_for('static', filename='img/hero-people.png') }}"
+                    alt=""
+                >
             </div>
         </section>
 
@@ -28,39 +32,64 @@
 
             <article class="person">
                 <aside class="person-card">
+                    <img class="avatar" src="{{ url_for('static', filename='img/avatar-jayeeta.png') }}" alt="Jayeeta Roy">
+                    <h3>Jayeeta Roy</h3>
+                    <p class="role">Data curation, documentation and testing</p>
+                </aside>
+                <div class="person-body">
+                    <p>Jayeeta built the dataset and wrote the dataset page, with the reasoning behind each data choice. She also kept the project documentation and tested the dataset and the website. Her commits appear under the GitHub account jayeeta-r.</p>
+                    <h4>Responsibilities</h4>
+                    <ul>
+                        <li>Searched Kaggle, GitHub and OpenAlex for a dataset of academic articles, and chose OpenAlex (19 October).</li>
+                        <li>Took a random sample of 100 journal articles in information systems and library and information science from 2018 to 2020, with 20 from each of five publishers (19 October).</li>
+                        <li>Cleaned the sample to 84 articles by removing three retracted articles, three articles not in English and ten records without an author country. She also corrected an article on data breaches that was labelled "Thoreau and American Literature" (19 October).</li>
+                        <li>Grouped about 40 topic labels into eight broad categories, and uploaded the raw and cleaned data to the Data folder on GitHub (19 October).</li>
+                        <li>Regrouped the topics into 13, because the topic filter needed 10 to 15, added the full author lists and keywords, and kept 50 articles, ten from each publisher (21 October).</li>
+                        <li>Converted the data to XML. A first Python conversion could not hold several authors for one article, so she copied the code block and corrected the XML fields herself. She delivered the XML file to Ammara the same day (21 October).</li>
+                        <li>Wrote the dataset page in HTML. It explains why we chose the data, why we use the citation count and how citations per year is calculated, with APA references to the course literature and to research on citations (23 and 24 October).</li>
+                        <li>Kept the field notes on meetings, decisions and handovers, and put this people page together from everyone's notes and the commit history.</li>
+                        <li>Checked the project against the assignment requirements before submission.</li>
+                        <li>Tested the dataset and the website. She checked that the XML file is well formed and holds 50 articles. She found that the footers named the wrong course, that GitHub Pages could not show the Flask pages and that a merge had broken the homepage. She reported four more flaws on the static site on 28 October.</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="person">
+                <aside class="person-card">
                     <img class="avatar" src="{{ url_for('static', filename='img/avatar-ammara.png') }}" alt="Ammara Shakeel">
                     <h3>Ammara Shakeel</h3>
                     <p class="role">Architect and algorithm design</p>
                 </aside>
                 <div class="person-body">
-                    <p>Ammara is the architect of the project. On 19 October she created the GitHub repository, invited the group to it and set up the folder structure. On 21 October she wrote the search algorithm, which combines a keyword search with four optional filters.</p>
-                    <p>On 26 October she fixed a duplicated loop that stopped the articles from rendering, and added the written algorithm design to the algorithm page.</p>
+                    <p>Ammara set up the project repository and the structure, wrote the Python search algorithm and its documentation, and fixed the bug that stopped articles from displaying. She also helped get the project running on Render and prepared the navigation bar and the static index page for GitHub Pages.</p>
                     <h4>Responsibilities</h4>
                     <ul>
-                        <li>The Python search algorithm</li>
-                        <li>The architecture and folder structure</li>
-                        <li>The written algorithm page</li>
+                        <li>Created and managed the GitHub repository.</li>
+                        <li>Designed and implemented the algorithm logic in Python.</li>
+                        <li>Wrote and explained the algorithm documentation and HTML content on algorithem.html.</li>
+                        <li><strong>Bug fixing:</strong> Identified and fixed a bug while testing the application. A duplicated article loop in the HTML template caused rendering issues and warnings. Removed the redundant loop and tested the results to ensure that articles were displayed correctly.</li>
+                        <li>Published the project on <strong>GitHub Pages</strong> as a static website and on <strong>Render</strong> as a functional Flask application with Python-based search functionality.</li>
+                        <li>A static navigation bar hardcoded in for Github pages in every html pages in docs</li>
+                        <li>A static HTML version of the index page for GitHub Pages, showing the page design and structure without the Python functionality</li>
                     </ul>
                 </div>
             </article>
-
             <article class="person">
                 <aside class="person-card">
-                    <img class="avatar" src="{{ url_for('static', filename='img/avatar-jayeeta.png') }}" alt="Jayeeta Roy">
-                    <h3>Jayeeta Roy</h3>
-                    <p class="role">Data curation</p>
+                    <img class="avatar" src="{{ url_for('static', filename='img/avatar-laura.png') }}" alt="Laura Laikunaite">
+                    <h3>Laura Laikunaite</h3>
+                    <p class="role">HTML and CSS</p>
                 </aside>
                 <div class="person-body">
-                    <p>Jayeeta chose OpenAlex as the source and took a random sample of 100 articles from five publishers. She cleaned the sample to 84 articles and kept 50, ten from each publisher. She then converted the data to XML and handed it over to Ammara on 21 October.</p>
-                    <p>She also wrote the text of the dataset page, which explains the choice of data, the citation counts and how we calculated citations per year.</p>
+                    <p>Laura mainly worked on creating HTML and CSS files using VS Code.</p>
                     <h4>Responsibilities</h4>
                     <ul>
-                        <li>The data sampling, cleaning and XML file</li>
-                        <li>The written dataset page</li>
+                        <li>Wrote the homepage content, including the overall project description.</li>
+                        <li>Designed and styled the homepage using HTML and CSS.</li>
+                        <li>Designed the search interface and created CSS styling for the search and results pages.</li>
+                        <li>Used Git and GitHub to manage and commit changes on a separate branch.</li>
                     </ul>
                 </div>
             </article>
-
             <article class="person">
                 <aside class="person-card">
                     <img class="avatar" src="{{ url_for('static', filename='img/avatar-nhan.png') }}" alt="Thuy Bich Nhan Duong (Nhan)">
@@ -68,42 +97,40 @@
                     <p class="role">Website design</p>
                 </aside>
                 <div class="person-body">
-                    <p>Nhan set up the Figma style guide with colours, typography, spacing and icons, and drew the wireframes for every page. She designed and built the navigation bar, wrote the CSS for the page layouts, and added the hero sections to all pages.</p>
-                    <p>On 27 October she checked and updated the dataset and algorithm pages so that their styling is consistent.</p>
+                    <p>Nhan designed the visual style of the website and built much of its structure. She set up the Figma style guide with colours, typography, spacing and icons, and drew the wireframes for every page. She designed and built the navigation bar, wrote the HTML and CSS for the page layouts, and checked the dataset and algorithm pages so that their styling is consistent with the rest of the site. She also checked the content of the people page, added each member's section, and kept everyone's text consistent before replacing it with the final version.</p>
+                    <p>Note: Nhan's GitHub commits and contributions appear under two accounts, Joyl-aka-Meow and nhanduong0501. Both belong to her; she switched accounts partway through the project.</p>
                     <h4>Responsibilities</h4>
                     <ul>
-                        <li>The Figma style guide and wireframes</li>
-                        <li>The navigation bar</li>
-                        <li>The HTML and CSS for all pages except the homepage</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="person">
-                <aside class="person-card">
-                    <img class="avatar" src="{{ url_for('static', filename='img/avatar-laura.png') }}" alt="Laura Laik">
-                    <h3>Laura Laikunaite</h3>
-                    <p class="role">Homepage writing, HTML and CSS</p>
-                </aside>
-                <div class="person-body">
-                    <p>Laura wrote the content for the homepage, including the introduction, project purpose, dataset overview and workflow, and built its HTML and CSS.</p>
-                    <p>Laura created the CSS styling for the search and results pages.</p>
-                    <h4>Responsibilities</h4>
-                    <ul>
-                        <li>Writing the homepage content.</li>
-                        <li>Building the homepage HTML and CSS.</li>
-                        <li>Styling the search and results pages with CSS.</li>
+                        <li>Figma style guide with colours, typography, spacing and icons.</li>
+                        <li>Wireframes for every page of the website.</li>
+                        <li><strong>Navigation bar:</strong> designed and built the shared navigation bar.</li>
+                        <li>HTML and CSS for all pages except the homepage.</li>
+                        <li>Checked the dataset and algorithm pages so that their styling matches the rest of the site.</li>
+                        <li><strong>Content review:</strong> checked all the content on the people page, added each team member's section, and kept the page consistent before the final content replaced it.</li>
                     </ul>
                 </div>
             </article>
         </section>
 
         <section class="section">
+            <h2>Why we divided the work this way</h2>
+            <ul>
+                <li><strong>One lead per step.</strong> We followed the advice in the brief and gave each step one responsible person. Jayeeta led the data, Ammara the algorithm, and Nhan and Laura the website. All four of us shared the GitHub publication.</li>
+                <li><strong>Handovers.</strong> The steps depended on each other, so we set handover dates. The XML file went to Ammara on 21 October, and the search went to Laura on 22 October.</li>
+                <li><strong>One owner per page.</strong> Each page had its own owner, so that we could work at the same time without editing the same file.</li>
+                <li><strong>Reviews and our own commits.</strong> Reviews on the main branch helped us avoid merge conflicts. Each of us committed our own work, so the history shows who did what.</li>
+            </ul>
+        </section>
+
+        <section class="section">
             <h2>How we worked</h2>
             <p>All four of us wrote the text on this people page.</p>
             <ul>
-                <li><strong>Tools:</strong> GitHub, Figma, Excel and VS Code</li>
-                <li><strong>Workflow:</strong> one shared GitHub repository, with branches and pull requests. Changes to the main branch are reviewed by at least one other member before they are merged.</li>
+                <li><strong>Planning.</strong> We started from a brainstorm on academic articles with authors, publishers, topics and dates. Our first idea was to find which topics each publisher publishes most, ranked with a method such as bubble sort. We then chose to focus on filters first and to add a search bar if time allowed.</li>
+                <li><strong>Tools.</strong> GitHub, Figma, Excel, VS Code, and Python with Flask.</li>
+                <li><strong>Workflow.</strong> One shared GitHub repository, with branches and pull requests. Changes to the main branch are reviewed by at least one other member before they are merged.</li>
+                <li><strong>Communication.</strong> Zoom meetings, a group chat, and a shared document for ideas, tasks and progress.</li>
+                <li><strong>Personal information.</strong> We chose to show our full names and avatars, so no anonymised key is needed.</li>
             </ul>
         </section>
 
@@ -115,8 +142,9 @@
                 <li><strong>21 October:</strong> Jayeeta handed the XML dataset over to Ammara.</li>
                 <li><strong>22 October:</strong> Ammara handed the working search functionality over to Laura.</li>
                 <li><strong>23 October:</strong> we met on Zoom to decide on the HTML structure.</li>
-                <li><strong>26 October:</strong> we met to review the latest updates. Ammara fixed a duplicated loop, and we agreed what to update on the index page.</li>
-                <li><strong>28 October:</strong> we have our last meeting to finalise everything before publication.</li>
+                <li><strong>24 October:</strong> the page layout and the dataset page were merged into main.</li>
+                <li><strong>26 October:</strong> we met to review the latest updates. Ammara fixed a duplicated loop, and we agreed what to update on the homepage (index.html).</li>
+                <li><strong>28 October:</strong> the website was published on GitHub Pages and Render, and we held our last meeting to finalise everything before submission.</li>
                 <li><strong>Besides meetings:</strong> the group chat kept everyone up to date on changes, pull requests and urgent problems.</li>
             </ul>
         </section>
